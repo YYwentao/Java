@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ public class Test {
 //        //读取字符串到换行符就结束
 //        scanner.nextLine();
 
-        //读取若干个整数之和
+        //读取若干个整1数之和
 //        int sum =0;
 //        while(scanner.hasNext()){
 //            int num =scanner.nextInt();
@@ -159,12 +160,62 @@ public class Test {
 //        入，最多输入三次。三次均错，则提示退出程序
 //            Scanner scanner = new Scanner(System.in);
 //            System.out.println("请输入密码>:");
+//            String password = "123456";
+//            int retrytime = 3;
+//            for (int i=1;i<=3;i++){
+//                String num = scanner.next();
+//                if (Objects.equals(num, password)){
+//                    System.out.println("密码正确");
+//                    break;
+//                } else {
+//                    retrytime--;
+//                    System.out.println("请重新输入密码,密码还有"+retrytime+"次");
+//                }
+//                if (retrytime==0) {
+//                    System.out.println("次数用完退出程序");
+//                }
+//        }
+
+
 //        11. 写一个函数返回参数二进制中 1 的个数 比如： 15 0000 1111 4 个 1
+//            Scanner scanner = new Scanner(System.in);
+//            int num = scanner.nextInt();
+//            int num1 = BinarySystem(num);
+//            System.out.println(num1);
+
+
 //        12. 获取一个数二进制序列中所有的偶数位和奇数位， 分别输出二进制序列。
+//            Scanner sc = new Scanner(System.in);
+//            int num = sc.nextInt();     //用户输入的整数
+//            System.out.print("奇数位:");
+//            //一个整数在计算机中4个字节共32个比特位，奇数位为1，3，5，7...31
+//            for (int i = 31; i >= 1; i-=2) {
+//                System.out.print(num>>i&1);  //通过位运算：右移，然后与1，可得到该位的值
+//            }
+//            //偶数位数字获取方式与奇数位同理
+//            System.out.print("偶数位:");
+//            for (int i = 30; i >=0 ; i-=2) {
+//                System.out.print(num>>i&1);
+//            }
+
+        
 //        13. 输出一个整数的每一位.
 
 
 
+    }
+
+
+
+    public static int BinarySystem(int num) {   //二进制返回1的个数
+        int count = 0;
+        while (num>0) {
+            if ((num&1)==1) {
+                count++;
+            }
+            num=num>>1;
+        }
+        return count;
     }
 
     public static boolean isNarcissusNum(int num) {   //水仙花数
