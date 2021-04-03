@@ -29,7 +29,7 @@ public class Test {
 //        Scanner scanner = new Scanner(System.in);
 //        Random random = new Random();
 //        int toguess = random.nextInt(100)+1;
-//        while (true){
+//        while (true) {
 //            System.out.println("请输如一个要猜的数字[1,100]");
 //            int num = scanner.nextInt();
 //            if (toguess>num){
@@ -40,16 +40,17 @@ public class Test {
 //                System.out.println("猜对了");
 //                break;
 //            }
+//        }
 
 //        1. 根据年龄, 来打印出当前年龄的人是少年(低于18), 青年(19-28), 中年(29-55), 老年(56以上)
 //        Scanner scanner = new Scanner(System.in);
 //        System.out.println("请输入年龄");
 //        int age = scanner.nextInt();
-//        if (age<18){
+//        if (age<=18 && age>=0){
 //            System.out.println("是少年");
-//        }else if (age>=18&&28>=age){
+//        }else if (age>=19 && 28>=age){
 //            System.out.println("是青年");
-//        }else if (age>=29&&55>=age){
+//        }else if (age>=29 && 55>=age){
 //            System.out.println("是中年");
 //        }else {
 //            System.out.println("是老年");
@@ -104,11 +105,14 @@ public class Test {
 
 
 //        5. 输出乘法口诀表
+//            Scanner scanner = new Scanner(System.in);
+//            System.out.println("请输入一个数");
+//            int num = scanner.nextInt();
 //            int i=1;
 //            int j=1;
-//            for (i=1;i<10;i++){
+//            for (i=1;i<=num;i++){
 //                for (j=1;j<=i;j++){
-//                    System.out.print(i+"*"+j+"="+i*j+"\t");
+//                    System.out.print(j+"*"+i+"="+i*j+"\t");
 //                }
 //                System.out.println();
 //            }
@@ -164,7 +168,7 @@ public class Test {
 //            int retrytime = 3;
 //            for (int i=1;i<=3;i++){
 //                String num = scanner.next();
-//                if (Objects.equals(num, password)){
+//                if (num.equals( password)){
 //                    System.out.println("密码正确");
 //                    break;
 //                } else {
@@ -232,7 +236,7 @@ public class Test {
         }
     }
 
-    public static int claGreatestCommonDivisorm(int a,int b){        //最小公约数
+    public static int claGreatestCommonDivisorm(int a,int b){        //最大公约数
         int min =min(a,b);
         for (int i=min;min>=1;i--) {
             if (a%i == 0 && b%i==0) {
