@@ -19,7 +19,7 @@ public class Test20210408 {
         }
         return ret;
     }
-    public static void main(String[] args) {
+    public static void main7(String[] args) {
         /**
          * 数组的克隆：
          * Arrays.copyOf(int[] original, int newLength)
@@ -46,8 +46,8 @@ public class Test20210408 {
     }
     public static void main6(String[] args) {
         int[] array=new int[]{1,2,3,4,5,6,5,6};
-        toString(array);
-        System.out.println(Arrays.toString(array));
+        String tmp = toString(array);
+        System.out.println(tmp);
     }
 
     //判断数组是否有序
