@@ -263,4 +263,6 @@ public class Test {
         return 1/i-1/(i+1) ;
     }
 
+    public void hello() {
+    }
 }
