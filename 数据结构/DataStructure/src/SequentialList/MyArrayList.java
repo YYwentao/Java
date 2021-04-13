@@ -31,13 +31,13 @@ public class MyArrayList {
             return;
         }
         //2.pos==usedsize
-        if (pos==this.usedsize) {
-            this.elem[pos] = data;
-            this.usedsize++;
-            return;
-        }
+//        if (pos==this.usedsize) {
+//            this.elem[pos] = data;
+//            this.usedsize++;
+//            return;
+//        }
         //3.从后往前挪
-        for (int i = this.usedsize-1; i >=0; i--) {
+        for (int i = this.usedsize-1; i >=pos; i--) {
             this.elem[i+1] = this.elem[i];
         }
         this.elem[pos] = data;
@@ -107,7 +107,7 @@ public class MyArrayList {
         this.elem[pos] = value;
     }
 
-    //删除第一次出现的关键字key
+    //删除第一次出现的关键字toRemove
     public void remove(int toRemove) {
         //找下标
         int index =search(toRemove);
@@ -115,7 +115,7 @@ public class MyArrayList {
             System.out.println("没有要删除的数字");
             return;
         }
-        //主要理解i< this.usedsize-1，画图易懂，比如有三个数，要删除0号下标，i=0;i<2;i++,从后向前覆盖两次。
+        //主要理解i< this.usedsize-1，画图易懂，比如有1,2,3三个数，要删除0号下标，i=0;i<2;i++,从后向前覆盖两次。
         for (int i =index; i< this.usedsize-1;i++) {
             this.elem[i] = this.elem[i+1];
         }

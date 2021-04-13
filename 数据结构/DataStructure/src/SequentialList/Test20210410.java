@@ -12,7 +12,7 @@ public class Test20210410 {
     public static void main(String[] args) {
         MyArrayList myArrayList = new MyArrayList();
         myArrayList.add(0,1);
-        myArrayList.add(0,2);
+        myArrayList.add(1,2);
         myArrayList.add(0,3);
         myArrayList.add(3,4);
         System.out.println("是否包含："+ myArrayList.contains(1));

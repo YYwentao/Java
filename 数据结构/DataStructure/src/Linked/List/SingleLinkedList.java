@@ -24,11 +24,11 @@ public class SingleLinkedList {
     //头插法
     public void addFirst(int data) {
         Node node = new Node(data);
-        if (this.head == null) {
-            //第一次插入节点
-            this.head=node;
-            return;
-        }
+//        if (this.head == null) {
+//            //第一次插入节点
+//            this.head=node;
+//            return;
+//        }
         node.next = this.head;
         this.head = node;
     }
@@ -38,13 +38,13 @@ public class SingleLinkedList {
         Node node =new Node(data);
         if (this.head == null) {
             this.head = node;
-            return;
+        }else {
+            Node cur = this.head;
+            while (cur.next != null) {
+                cur = cur.next;
+            }
+            cur.next=node;
         }
-        Node cur =this.head;
-        while (cur.next != null) {
-            cur = cur.next;
-        }
-        cur.next=node;
     }
 
     //任意位置插入,第一个数据节点为0号下标
