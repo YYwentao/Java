@@ -16,15 +16,17 @@ public class TestSingList {
 //        myLinkList.addFirst(12);
 //        myLinkList.addFirst(13);
         myLinkList.addLast(14);
-        myLinkList.addLast(15);
-        myLinkList.addLast(16);
-        myLinkList.addLast(17);
-        myLinkList.addLast(18);
-        System.out.println(myLinkList.size());
-        myLinkList.display();
-        myLinkList.addIndex(0,10);
-        myLinkList.display();
-        myLinkList.addIndex(5,100);
+        myLinkList.addLast(14);
+        myLinkList.addLast(14);
+        myLinkList.addLast(14);
+        myLinkList.addLast(14);
+        //System.out.println(myLinkList.size());
+//        myLinkList.display();
+////        myLinkList.addIndex(0,10);
+////        myLinkList.display();
+////        myLinkList.addIndex(5,100);
+        System.out.println(myLinkList.contains(18));
+        myLinkList.removeAllKey(14);
         myLinkList.display();
     }
 }
