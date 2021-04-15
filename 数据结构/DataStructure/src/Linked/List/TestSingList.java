@@ -8,25 +8,34 @@ package Linked.List;
  * @author wentao
  * @since JDK 1.8
  */
+
 public class TestSingList {
     public static void main(String[] args) {
         SingleLinkedList myLinkList = new SingleLinkedList();
-//        myLinkList.addFirst(10);
-//        myLinkList.addFirst(11);
-//        myLinkList.addFirst(12);
-//        myLinkList.addFirst(13);
-        myLinkList.addLast(14);
-        myLinkList.addLast(14);
-        myLinkList.addLast(14);
-        myLinkList.addLast(14);
-        myLinkList.addLast(14);
-        //System.out.println(myLinkList.size());
-//        myLinkList.display();
-////        myLinkList.addIndex(0,10);
-////        myLinkList.display();
-////        myLinkList.addIndex(5,100);
-        System.out.println(myLinkList.contains(18));
-        myLinkList.removeAllKey(14);
-        myLinkList.display();
+//        System.out.println("===================尾插法=====================");
+//          myLinkList.addLast(14);
+//          myLinkList.addLast(15);
+//          myLinkList.addLast(16);
+//          myLinkList.addLast(17);
+//          myLinkList.addLast(18);
+//          myLinkList.display();
+//        System.out.println("===================头插法=====================");
+//          myLinkList.addFirst(18);
+//          myLinkList.display();
+//        System.out.println("===================在1位置插入=====================");
+//          myLinkList.addIndex(1,2);
+//          myLinkList.display();
+//        System.out.println("===================删除删除值为2的节点=====================");
+//          myLinkList.remove(2);
+//          myLinkList.display();
+//        System.out.println("===================删除删除所有值为18的节点=====================");
+//         myLinkList.removeAllKey(18);
+//         myLinkList.display();
+           myLinkList.addLast(14);
+           myLinkList.addLast(15);
+           myLinkList.addLast(14);
+           myLinkList.addLast(17);
+           myLinkList.addLast(18);
+        System.out.println(myLinkList.hasCycle());
     }
 }
