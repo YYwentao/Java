@@ -21,7 +21,6 @@ class Node {
 public class SingleLinkedList {
 
     public Node head;   //保存单链表的头节点的引用
-
     //头插法
     public void addFirst(int data) {
         Node node = new Node(data);
@@ -170,6 +169,7 @@ public class SingleLinkedList {
         System.out.println();
     }
 
+
     //释放内存
     public void clear() {
         this.head = null;
@@ -187,7 +187,6 @@ public class SingleLinkedList {
         }
         return slow;
     }
-
     //3.反转一个单链表(头插法)
     public Node reverseList() {
         if (this.head == null || this.head.next == null) {
@@ -208,10 +207,128 @@ public class SingleLinkedList {
         return this.head;
     }
     //4.输入一个链表，输出该链表中倒数第k个结点。
+    public Node FindKthToTail(int k) {
+        if (k<=0 || this.head==null) {
+            return null;
+        }
+        Node fast = this.head;
+        Node slow = this.head;
+        while (k-1 != 0) {
+            if (fast.next!=null) {
+                fast = fast.next;
+                k--;
+            } else {
+                System.out.println("k太大了");
+                return null;
+            }
+        }
+        while (fast.next != null) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return slow;
+    }
     //5.将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
     //6.编写代码，以给定值x为基准将链表分割成两部分，所有小于x的结点排在大于或等于x的结点之前
+    public Node partition(int x) {
+        Node cur = this.head;
+        Node bs = null;
+        Node be = null;
+        Node as = null;
+        Node ae = null;
+        while (cur != null) {
+            if (cur.data < x) {
+                if (bs == null) {
+                    //第一次插入
+                    bs = cur;
+                    be = cur;
+                } else {
+                    //尾插法
+                    be.next = cur;
+                    be = be.next;
+                }
+            } else {
+               if (as == null) {
+                   //第一次插入
+                   as = cur;
+                   ae = cur;
+               } else {
+                   //尾插法
+                   ae.next = cur;
+                   ae = ae.next;
+               }
+            }
+            cur = cur.next;
+        }
+        //第一个区间没有数据的时候
+        if(bs == null) {
+            return as;
+        }
+        be.next = as;
+        if (as != null) {
+            //预防最后一个区间的最后一个节点 他的next不是null.
+            //不预防的话  可能就死循环了
+            ae.next =null;
+        }
+        this.head = bs;
+        return head;
+    }
     //7.在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针
+    public Node deleteDuplication() {
+        Node cur = this.head;
+        Node tmphead = new Node(-1);
+        Node newhead = tmphead;
+        while (cur!= null) {
+            if (cur.next != null && cur.data == cur.next.data) {
+                //找到重复节点
+                while (cur.next != null && cur.data == cur.next.data) {
+                    cur = cur.next;
+                }
+                cur = cur.next;
+            } else {
+                //没有找到重复节点
+                tmphead.next = cur;
+                tmphead = tmphead.next;
+                cur = cur.next;
+            }
+        }
+        tmphead.next = null;//防止尾节点为空
+        return newhead.next;
+    }
     //8.链表的回文结构
+    public boolean chkPalindrome() {
+        if (this.head == null) return false;
+        if (this.head.next ==null) return true;
+        Node fast = this.head;
+        Node slow = this.head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        //slow位置一定是中间位置
+        //2.翻转
+        Node cur = slow.next;
+        while (cur != null) {
+            Node curNext = cur.next;
+            cur.next = slow;
+            slow = cur;
+            cur = curNext;
+        }
+        //slow在最后了
+        //两边往中间走判断是否回文结构
+        while (this.head != slow) {
+            if (this.head.data != slow.data) {
+                return false;
+            }
+            //偶数情况下
+            if (this.head.next == slow) {
+                return true;
+            }
+            this.head = this.head.next;
+            slow = slow.next;
+        }
+        return  true;
+    }
 
     //9.给定一个链表，判断链表中是否有环
     public boolean hasCycle() {
@@ -229,7 +346,6 @@ public class SingleLinkedList {
         }
         return true;
     }
-
 
     //10.给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null
     public Node detectCycle() {
