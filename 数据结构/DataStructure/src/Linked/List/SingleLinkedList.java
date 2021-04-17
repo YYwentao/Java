@@ -64,7 +64,6 @@ public class SingleLinkedList {
         node.next = cur.next;
         cur.next = node;
     }
-
     private Node searchIndext(int index) {
         //1.检查index的合法性
         if (index < 0 || index > this.size()) {
@@ -110,7 +109,6 @@ public class SingleLinkedList {
         //开始删除
         prev.next = del.next;
     }
-
     private Node searckkey(int key) {
         Node prev = this.head;
         while (prev.next != null) {
@@ -168,6 +166,16 @@ public class SingleLinkedList {
         }
         System.out.println();
     }
+    //根据指定节点打印
+    public void display1(Node newHead) {
+        Node cur = newHead;
+        while (cur != null) {
+            System.out.print(cur.data+" ");
+            cur = cur.next;
+        }
+        System.out.println();
+    }
+
 
 
     //释放内存
@@ -228,7 +236,7 @@ public class SingleLinkedList {
         }
         return slow;
     }
-    //5.将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
+
     //6.编写代码，以给定值x为基准将链表分割成两部分，所有小于x的结点排在大于或等于x的结点之前
     public Node partition(int x) {
         Node cur = this.head;
@@ -329,7 +337,6 @@ public class SingleLinkedList {
         }
         return  true;
     }
-
     //9.给定一个链表，判断链表中是否有环
     public boolean hasCycle() {
         Node fast = this.head;
@@ -346,7 +353,6 @@ public class SingleLinkedList {
         }
         return true;
     }
-
     //10.给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null
     public Node detectCycle() {
         Node fast = this.head;
