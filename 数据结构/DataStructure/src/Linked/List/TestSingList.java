@@ -104,13 +104,8 @@ public class TestSingList {
         myLinkList.addLast(19);
         myLinkList.addLast(21);
         myLinkList.addLast(23);
+        myLinkList.addIndex(0,1);
+        myLinkList.addIndex(1,2);
         myLinkList.display();
-        myLinkList1.addLast(14);
-        myLinkList1.addLast(16);
-        myLinkList1.addLast(18);
-        myLinkList1.addLast(20);
-        myLinkList1.addLast(21);
-        myLinkList1.display();
-        System.out.println(getIntersectionNode(myLinkList.head, myLinkList1.head));
     }
 }
