@@ -2,18 +2,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>day02_javaweb_02</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <!--    继承父工程，获取依赖版本信息，如果继承父工程，依赖必须添加具体版本信息  -->
     <parent>
         <artifactId>parent_version_manger</artifactId>
         <groupId>org.example</groupId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../parent_version_manger/pom.xml</relativePath>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>day01-javaweb-01</artifactId>
     <!--    添加打包方式  war-->
     <packaging>war</packaging>
-
     <!--    添加依赖  Javaweb：jsp；-->
     <dependencies>
         <!-- JSP相关 -->
@@ -33,8 +36,6 @@
         </dependency>
     </dependencies>
     <!--    添加依赖介绍-->
-
-
     <!--    添加tomcat插件-->
     <build>
         <plugins>
@@ -50,5 +51,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
