@@ -3,6 +3,8 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/day01-javaweb-01" />
     <file type="web" url="file://$PROJECT_DIR$/day02_javaweb_02" />
+    <file type="web" url="file://$PROJECT_DIR$/HomeWork0421/HomeWork0421/HomeWork0421" />
+    <file type="web" url="file://$PROJECT_DIR$/HomeWork20210420" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
@@ -14,6 +16,8 @@
         <option value="$PROJECT_DIR$/parent_version_manger/pom.xml" />
         <option value="$PROJECT_DIR$/day02_javaweb_02/pom.xml" />
         <option value="$PROJECT_DIR$/HomeWork0420/pom.xml" />
+        <option value="$PROJECT_DIR$/HomeWork0421/HomeWork0421/HomeWork0421/pom.xml" />
+        <option value="$PROJECT_DIR$/HomeWork20210420/pom.xml" />
       </list>
     </option>
   </component>

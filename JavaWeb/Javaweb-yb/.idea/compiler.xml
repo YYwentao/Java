@@ -9,6 +9,7 @@
         <module name="day01-javaweb-01" />
         <module name="day01_maven_01" />
         <module name="day02_javaweb_02" />
+        <module name="HomeWork20210420" />
         <module name="HomeWork0420" />
       </profile>
     </annotationProcessing>
@@ -17,6 +18,8 @@
       <module name="day01_maven_01" target="1.5" />
       <module name="day02_javaweb_02" target="1.7" />
       <module name="HomeWork0420" target="1.5" />
+      <module name="HomeWork0421" target="1.7" />
+      <module name="HomeWork20210420" target="1.7" />
       <module name="parent_version_manger" target="1.7" />
     </bytecodeTargetLevel>
   </component>
