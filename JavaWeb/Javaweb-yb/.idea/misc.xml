@@ -5,6 +5,7 @@
     <file type="web" url="file://$PROJECT_DIR$/day02_javaweb_02" />
     <file type="web" url="file://$PROJECT_DIR$/HomeWork0421/HomeWork0421/HomeWork0421" />
     <file type="web" url="file://$PROJECT_DIR$/HomeWork20210420" />
+    <file type="web" url="file://$PROJECT_DIR$/Java0422_blogdemo" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
@@ -18,6 +19,7 @@
         <option value="$PROJECT_DIR$/HomeWork0420/pom.xml" />
         <option value="$PROJECT_DIR$/HomeWork0421/HomeWork0421/HomeWork0421/pom.xml" />
         <option value="$PROJECT_DIR$/HomeWork20210420/pom.xml" />
+        <option value="$PROJECT_DIR$/Java0422_blogdemo/pom.xml" />
       </list>
     </option>
   </component>

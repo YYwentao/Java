@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>../day01-javaweb-01</module>
+        <module>../untitled</module>
     </modules>
     <!-- -->
 

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HomeWork0420/HomeWork0420.iml" filepath="$PROJECT_DIR$/HomeWork0420/HomeWork0420.iml" />
       <module fileurl="file://$PROJECT_DIR$/HomeWork20210420/HomeWork20210420.iml" filepath="$PROJECT_DIR$/HomeWork20210420/HomeWork20210420.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java0422_blogdemo/Java0422_blogdemo.iml" filepath="$PROJECT_DIR$/Java0422_blogdemo/Java0422_blogdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/JavaWeb.iml" filepath="$PROJECT_DIR$/.idea/JavaWeb.iml" />
       <module fileurl="file://$PROJECT_DIR$/day01-javaweb-01/day01-javaweb-01.iml" filepath="$PROJECT_DIR$/day01-javaweb-01/day01-javaweb-01.iml" />
       <module fileurl="file://$PROJECT_DIR$/day01_maven_01/day01_maven_01.iml" filepath="$PROJECT_DIR$/day01_maven_01/day01_maven_01.iml" />
