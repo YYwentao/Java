@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name></display-name>
+
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>club.xiaoandx.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>RegisteServlet</servlet-name>
+    <servlet-class>club.xiaoandx.servlet.RegisteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisteServlet</servlet-name>
+    <url-pattern>/RegisteServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>UserListServlet</servlet-name>
+    <servlet-class>club.xiaoandx.servlet.UserListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserListServlet</servlet-name>
+    <url-pattern>/UserListServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>createCode</servlet-name>
+    <servlet-class>club.xiaoandx.servlet.createCode</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>createCode</servlet-name>
+    <url-pattern>/user/check.jpg</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>FindAllUserServlet</servlet-name>
+    <servlet-class>club.xiaoandx.servlet.FindAllUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindAllUserServlet</servlet-name>
+    <url-pattern>/findUserList</url-pattern>
+  </servlet-mapping>
+
+</web-app>

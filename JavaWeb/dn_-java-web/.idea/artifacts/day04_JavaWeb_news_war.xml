@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="day04_JavaWeb_news:war">
+    <output-path>$PROJECT_DIR$/day04_JavaWeb_news/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>day04_JavaWeb_news</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="day04_JavaWeb_news.war">
+      <element id="artifact" artifact-name="day04_JavaWeb_news:war exploded" />
+    </root>
+  </artifact>
+</component>

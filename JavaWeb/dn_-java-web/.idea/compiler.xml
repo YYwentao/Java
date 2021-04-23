@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="day04_news" />
+        <module name="day02_work_login" />
+        <module name="day02_01" />
+        <module name="day03_01" />
+        <module name="day04_JavaWeb_news" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="day01_JavaWeb_01" target="1.7" />
+      <module name="day02_01" target="1.7" />
+      <module name="day02_work_login" target="1.7" />
+      <module name="day03_01" target="1.7" />
+      <module name="day04_JavaWeb_news" target="1.7" />
+      <module name="day04_news" target="1.7" />
+      <module name="parent_version_manger" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

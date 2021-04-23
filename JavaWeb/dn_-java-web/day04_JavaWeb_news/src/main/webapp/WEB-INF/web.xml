@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+         http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name></display-name>
+
+
+<!--  默认显示页面，当用户服务的是一个目录，而不是一个文件时，默认显示该页面-->
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+<!--  配置url与servlet的映射关系-->
+  <servlet>
+    <servlet-name>newsServlet</servlet-name>
+    <servlet-class>com.tedu.web.NewsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>newsServlet</servlet-name>
+    <url-pattern>/news</url-pattern>
+  </servlet-mapping>
+  
+
+<!--  绑定新闻阅读  servlet  -->
+  <servlet>
+    <servlet-name>readNews</servlet-name>
+    <servlet-class>com.tedu.web.ReadServlet</servlet-class>
+  </servlet>
+<servlet-mapping>
+  <servlet-name>readNews</servlet-name>
+  <url-pattern>/util/news</url-pattern>
+</servlet-mapping>
+
+
+</web-app>

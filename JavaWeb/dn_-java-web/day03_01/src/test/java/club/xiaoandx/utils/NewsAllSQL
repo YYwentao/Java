@@ -1,0 +1,23 @@
+
+-- 1题sql开始
+-- SELECT n.nid,n.ntid,n.ntitle,n.nauthor,n.ncontent,n.ncreateDate,n.npicPath,n.ncontent,n.nmodifyDate,n.nsummary  FROM news as n
+
+-- INSERT INTO news as u  (n.ntid,n.ntitle,n.nauthor,n.ncontent,n.ncreateDate,n.npicPath,n.ncontent,n.nmodifyDate,n.nsummary)  VALUES (ntid,ntitle,nauthor,ncontent,ncreateDate,npicPath,ncontent,nmodifyDate,nsummary)
+
+-- INSERT INTO news (ntid,ntitle,nauthor,ncontent,ncreateDate,npicPath,nmodifyDate,nsummary)  VALUES (1,'李克强在四川','news','新华社成都4月2','2021-04-20 10:46:39','','2021-04-20 10:46:39','')
+
+-- DELETE FROM news WHERE nid = 188
+
+--  UPDATE news SET ntid = 3 WHERE nid =187
+
+-- 1题sql截止
+
+
+
+-- 2题sql
+-- SELECT * FROM news as ns INNER JOIN topic as t ON ns.ntid = t.tid WHERE tid = 1
+
+
+
+-- 3题sql
+-- SELECT n.nid,n.ntid,n.ntitle,nauthor,n.ncontent,n.npicPath,n.ncontent,n.nmodifyDate,n.nsummary,c.ccontent,c.cdate,c.cauthor from news AS n INNER JOIN comments AS c ON n.nid = c.cnid WHERE n.nid = 108
