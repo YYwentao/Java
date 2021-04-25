@@ -2,7 +2,7 @@ package book;
 
 /**
  * ClassName: Book
- * Description:
+ * Description:书的属性
  * date: 2021/4/23 15:02
  *
  * @author wentao

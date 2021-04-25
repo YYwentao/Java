@@ -7,7 +7,7 @@ import book.BookList;
  * Description:
  * date: 2021/4/23 20:25
  * 接口
- * @author wentao
+ * @author wt
  * @since JDK 1.8
  */
 public interface IOpeartion {

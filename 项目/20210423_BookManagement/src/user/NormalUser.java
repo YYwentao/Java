@@ -1,5 +1,7 @@
 package user;
 
+import operation.*;
+
 import java.util.Scanner;
 
 /**
@@ -11,10 +13,21 @@ import java.util.Scanner;
  * @since JDK 1.8
  */
 public class NormalUser extends User{
+
+    public NormalUser(String name) {
+        super(name);
+        this.IOpeartions = new IOpeartion[] {
+                new Exit(),
+                new Find(),
+                new Borrow(),
+                new Return()
+        };
+    }
+
     @Override
     public int menu() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("=======" + "hello" +this.name + "=======");
+        System.out.println("=======" + "Hello "+this.name + "=======");
         System.out.println("1.查找图书");
         System.out.println("2.借阅图书");
         System.out.println("3.归还图书");

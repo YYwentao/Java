@@ -5,7 +5,7 @@ package book;
  * Description:
  * date: 2021/4/23 15:03
  *  书架
- * @author wentao
+ * @author wt
  * @since JDK 1.8
  */
 public class BookList {
@@ -14,7 +14,7 @@ public class BookList {
 
     public BookList() {
         books[0] = new Book("三国演义","罗贯中",56,"小说");
-        books[1] = new Book("西游戏","吴承恩",77,"小说");
+        books[1] = new Book("西游记","吴承恩",77,"小说");
         books[2] = new Book("水浒传","施耐庵",66,"小说");
         this.usedSize = 3;
     }
