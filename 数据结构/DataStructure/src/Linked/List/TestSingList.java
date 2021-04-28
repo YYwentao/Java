@@ -53,7 +53,7 @@ public class TestSingList {
         return pl;
     }
     //5.将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
-    public  static Node mergeTwoLists(Node head1, Node head2) {
+     public  static Node mergeTwoLists(Node head1, Node head2) {
         Node newHead = new Node(-1); //傀儡节点
         Node tmphead = newHead;
         while (head1 != null && head2 != null) {
