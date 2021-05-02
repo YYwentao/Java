@@ -55,8 +55,56 @@ public class BinaryTree {
     // 后序遍历
     void postOrderTraversal(Node root){
         if (root == null) return;
-        preOrderTraversal(root.left);
-        preOrderTraversal(root.right);
+        postOrderTraversal(root.left);
+        postOrderTraversal(root.right);
         System.out.print(root.val+" ");
+    }
+
+    // 遍历思路-求结点个数
+    static int size = 0;
+    void getSize1(Node root){
+        if (root == null) return;
+        size = size+1;
+        getSize1(root.left);
+        getSize1(root.right);
+    }
+    // 子问题思路-求结点个数
+    int getSize2(Node root){
+        if (root == null) return 0;
+        return getSize2(root.left)+getSize2(root.right) + 1;
+    }
+
+    // 遍历思路-求叶子结点个数
+    static int leafSize = 0;
+    void getLeafSize1(Node root){
+        if (root == null) return;
+        if (root.left == null && root.right == null) {
+            leafSize++;
+        }
+        getLeafSize1(root.left);
+        getLeafSize1(root.right);
+    }
+    // 子问题思路-求叶子结点个数
+    int getLeafSize2(Node root){
+        if (root == null) return 0;
+        if (root.left == null && root.right == null) {
+            return 1;
+        }
+        return getLeafSize2(root.left) + getLeafSize2(root.right);
+    }
+
+    // 子问题思路-求第 k 层结点个数
+    int getKLevelSize(Node root){
+        return -1;
+    }
+    // 获取二叉树的高度
+    int getHeight(Node root){
+        return -1;
+    }
+    // 查找 val 所在结点，没有找到返回 null
+    // 按照 根 -> 左子树 -> 右子树的顺序进行查找
+    // 一旦找到，立即返回，不需要继续在其他位置查找
+    Node find(Node root, int val){
+        return null;
     }
 }

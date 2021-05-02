@@ -20,5 +20,16 @@ public class TestDemo {
         System.out.println();
         System.out.print("后序遍历: ");
         binaryTree.postOrderTraversal(root);
+        System.out.println();
+
+        System.out.println("节点个数");
+        binaryTree.getSize1(root);
+        System.out.println(BinaryTree.size);
+        System.out.println(binaryTree.getSize2(root));
+
+        System.out.println("叶子节点：");
+        binaryTree.getLeafSize1(root);
+        System.out.println(BinaryTree.leafSize);
+        System.out.println(binaryTree.getLeafSize2(root));
     }
 }
