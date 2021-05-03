@@ -60,6 +60,9 @@ public class BinaryTree {
         System.out.print(root.val+" ");
     }
 
+    /**
+     * 求结点个数
+     */
     // 遍历思路-求结点个数
     static int size = 0;
     void getSize1(Node root){
@@ -74,6 +77,9 @@ public class BinaryTree {
         return getSize2(root.left)+getSize2(root.right) + 1;
     }
 
+    /**
+     * 求叶子结点个数
+     */
     // 遍历思路-求叶子结点个数
     static int leafSize = 0;
     void getLeafSize1(Node root){
@@ -93,18 +99,42 @@ public class BinaryTree {
         return getLeafSize2(root.left) + getLeafSize2(root.right);
     }
 
+    /**
+     * 求第 k 层结点个数
+     */
     // 子问题思路-求第 k 层结点个数
-    int getKLevelSize(Node root){
-        return -1;
+    int getKLevelSize(Node root,int k){
+        if (root == null) return 0;
+        if (k == 1) {
+            return 1;
+        }
+        return getKLevelSize(root.left,k-1) + getKLevelSize(root.right,k-1);
     }
     // 获取二叉树的高度
     int getHeight(Node root){
-        return -1;
+        if (root == null) return 0;
+        int leftHeight = getHeight(root.left);
+        int rightHeight = getHeight(root.right);
+
+        return leftHeight > rightHeight ?
+                leftHeight+1:rightHeight+1;
     }
     // 查找 val 所在结点，没有找到返回 null
     // 按照 根 -> 左子树 -> 右子树的顺序进行查找
     // 一旦找到，立即返回，不需要继续在其他位置查找
-    Node find(Node root, int val){
+    Node find(Node root, char val){
+        if (root == null) return null;
+        if (root.val == val) {
+            return root;
+        }
+        Node r = find(root.left,val);
+        if (r != null) {
+            return r;
+        }
+        r = find(root.right,val);
+        if (r != null) {
+            return r;
+        }
         return null;
     }
 }

@@ -31,5 +31,9 @@ public class TestDemo {
         binaryTree.getLeafSize1(root);
         System.out.println(BinaryTree.leafSize);
         System.out.println(binaryTree.getLeafSize2(root));
+        System.out.println("树第K层的节点："+binaryTree.getKLevelSize(root, 3));
+        System.out.println("树的高度: "+binaryTree.getHeight(root));
+        Node ret = binaryTree.find(root, 'B');
+        System.out.println(ret.val);
     }
 }
