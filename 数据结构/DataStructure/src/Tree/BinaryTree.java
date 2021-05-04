@@ -137,4 +137,18 @@ public class BinaryTree {
         }
         return null;
     }
+    /**
+     * 判断一颗二叉树是否是平衡二叉树
+     */
+    public boolean isBalanced(Node root) {
+        if (root == null) return true;
+        if (root.left == null && root.right == null) return true;
+        //看当前节点对应的子树是否平衡
+        int leftHeight = getHeight(root.left);
+        int rightHeight = getHeight(root.right);
+        if (leftHeight-rightHeight > 1 || leftHeight-rightHeight < -1) {
+            return false;
+        }
+        return isBalanced(root.left) && isBalanced(root.right);
+    }
 }
