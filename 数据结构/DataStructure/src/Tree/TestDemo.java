@@ -21,6 +21,9 @@ public class TestDemo {
         System.out.print("后序遍历: ");
         binaryTree.postOrderTraversal(root);
         System.out.println();
+        System.out.print("层序遍历: ");
+        binaryTree.levelOrderTraversal(root);
+        System.out.println();
 
         System.out.println("节点个数");
         binaryTree.getSize1(root);
@@ -35,5 +38,6 @@ public class TestDemo {
         System.out.println("树的高度: "+binaryTree.getHeight(root));
         Node ret = binaryTree.find(root, 'B');
         System.out.println(ret.val);
+        System.out.println("是否为完全二叉树："+binaryTree.isCompleteTree(root));
     }
 }

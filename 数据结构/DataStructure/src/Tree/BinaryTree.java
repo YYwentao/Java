@@ -1,5 +1,8 @@
 package Tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * ClassName: BinaryTree
  * Description:
@@ -33,7 +36,7 @@ public class BinaryTree {
         B.right = E;
         C.left = F;
         C.right = G;
-        E.right = H;
+        //E.right = H;
         return A;
     }
 
@@ -58,6 +61,23 @@ public class BinaryTree {
         postOrderTraversal(root.left);
         postOrderTraversal(root.right);
         System.out.print(root.val+" ");
+    }
+    // 层序遍历
+    void levelOrderTraversal(Node root){
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            Node cur = queue.poll();
+            //访问元素
+            System.out.print(cur.val+" ");
+            //左右子树入队列
+            if (cur.left != null) {
+                queue.offer(cur.left);
+            }
+            if (cur.right != null) {
+                queue.offer(cur.right);
+            }
+        }
     }
 
     /**
@@ -138,7 +158,7 @@ public class BinaryTree {
         return null;
     }
     /**
-     * 判断一颗二叉树是否是平衡二叉树
+     * 判断一颗二叉树是否是平衡二叉树  (一个二叉树每个节点的左右两个子树的高度差的绝对值不超过 1 )
      */
     public boolean isBalanced(Node root) {
         if (root == null) return true;
@@ -151,4 +171,49 @@ public class BinaryTree {
         }
         return isBalanced(root.left) && isBalanced(root.right);
     }
+    /**
+     * 判断一颗二叉树是否是完全二叉树  (意思就是中间没有空隙)
+     */
+    boolean isCompleteTree(Node root){
+        if (root == null) return true;
+        //1.队列
+        Queue<Node> queue = new LinkedList<>();
+        //2.往队列里扔元素 ，出队列(==null)
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+             Node cur = queue.poll();
+             if (cur != null) {
+                 queue.offer(cur.left);
+                 queue.offer(cur.right);
+             } else {
+                 break;
+             }
+        }
+        //代码走到这里，说明上面while循环是break跳出，poll的cur节点一定为空
+        //3，继续判断队列，如果全部为null，为true,否则为false(因为如果是完全二叉树，一单弹出的元素为null了，后面必须全文空)
+        while (!queue.isEmpty()) {
+            Node cur = queue.poll();
+            if (cur != null) {
+                return false;
+            }
+        }
+        return  true;
+    }
+    /**
+     * 对称二叉树
+     * 判断 root.left与 root.right 是否为镜像关系
+     */
+    public boolean isSymmetric(Node root) {
+        if(root == null) return true;
+        return isMirror(root.left,root.right);
+    }
+    private boolean isMirror(Node A, Node B) {
+        if(A == null && B == null) return true;
+        if (A == null || B == null) return false; //两者一个为空，一个非空
+        if(A.val != B.val) {
+            return false;
+        }
+        return isMirror(A.left,B.right) && isMirror(A.right,B.left);
+    }
 }
+
