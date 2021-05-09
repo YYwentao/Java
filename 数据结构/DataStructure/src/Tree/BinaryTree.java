@@ -36,7 +36,7 @@ public class BinaryTree {
         B.right = E;
         C.left = F;
         C.right = G;
-        //E.right = H;
+        E.right = H;
         return A;
     }
 
@@ -214,6 +214,30 @@ public class BinaryTree {
             return false;
         }
         return isMirror(A.left,B.right) && isMirror(A.right,B.left);
+    }
+
+    /**
+     * 3. 给定一个二叉树, 找到该树中两个指定节点的最近公共祖先 。
+     */
+    public Node lowestCommonAncestor(Node root, Node p, Node q) {
+        if(root == null) return null;
+        if(root == p || root ==q ) {
+            return root;
+        }
+        //每个节点左右分别递归找p和q,理解根节点就行，后面节点都一样
+        Node leftTree = lowestCommonAncestor(root.left,p,q);
+        Node rightTree = lowestCommonAncestor(root.right,p,q);
+        //左右都有值的话，如1--5，6--0，2--8祖先都是 3
+        if(leftTree != null && rightTree != null) {
+            return root;
+        }
+        if(leftTree !=null && rightTree == null) {
+            return leftTree;
+        }
+        if(leftTree ==null && rightTree != null) {
+            return rightTree;
+        }
+        return null;
     }
 }
 
