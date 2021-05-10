@@ -2,6 +2,10 @@ package Tree;
 
 import java.util.Scanner;
 
+
+/**
+ *  二叉树的构建及遍历(习题)
+ */
 class TreeNode{
     public char val;
     public TreeNode left;

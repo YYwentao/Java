@@ -2,10 +2,11 @@ package Tree;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  * ClassName: BinaryTree
- * Description:
+ * Description: 二叉树实现
  * date: 2021/5/2 12:44
  *
  * @author wt
@@ -40,6 +41,9 @@ public class BinaryTree {
         return A;
     }
 
+    /**
+     *递归遍历
+     */
     // 前序遍历
     void preOrderTraversal(Node root){
         if (root == null) return;
@@ -78,6 +82,48 @@ public class BinaryTree {
                 queue.offer(cur.right);
             }
         }
+    }
+    /**
+     * 非递归遍历
+     */
+    // 前序遍历
+    void preOrderTraversalNor(Node root) {
+        if (root == null) {
+            return;
+        }
+        Stack<Node> stack = new Stack<>();
+        Node cur = root;
+        while (cur != null || !stack.isEmpty()) {
+            while (cur != null) {
+                stack.push(cur);
+                System.out.print(cur.val+" ");
+                cur = cur.left;
+            }
+            Node top = stack.pop();
+            cur = top.right;
+        }
+    }
+    // 中序遍历
+    void inOrderTraversalNor(Node root) {
+        if (root == null) {
+            return;
+        }
+        Stack<Node> stack = new Stack<>();
+        Node cur = root;
+        while (cur !=null || !stack.isEmpty()) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            Node top = stack.pop();//取栈顶
+            System.out.print(top.val+" ");
+            cur = top.right;
+        }
+    }
+
+    // 后序遍历
+    void postOrderTraversalNor(Node root) {
+
     }
 
     /**

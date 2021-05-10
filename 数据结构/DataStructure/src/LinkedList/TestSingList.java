@@ -1,5 +1,7 @@
 package LinkedList;
 
+
+
 /**
  * ClassName: TestSingList
  * Description:测试单链表
