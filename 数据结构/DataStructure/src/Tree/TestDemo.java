@@ -13,18 +13,26 @@ public class TestDemo {
         BinaryTree binaryTree = new BinaryTree();
         Node root = binaryTree.createTree();
 
+        System.out.print("非递归前序遍历: ");
         binaryTree.preOrderTraversalNor(root);
-        System.out.print("前序遍历: ");
+        System.out.println();
+        System.out.print("递归前序遍历: ");
         binaryTree.preOrderTraversal(root);
 
         System.out.println();
+        System.out.print("非递归中序遍历: ");
         binaryTree.inOrderTraversalNor(root);
-        System.out.print("中序遍历: ");
+        System.out.println();
+        System.out.print("递归中序遍历: ");
         binaryTree.inOrderTraversal(root);
-//        System.out.println();
-//        System.out.print("后序遍历: ");
-//        binaryTree.postOrderTraversal(root);
-//        System.out.println();
+
+        System.out.println();
+        System.out.print("非递归后序遍历: ");
+        binaryTree.postOrderTraversalNor(root);
+        System.out.println();
+        System.out.print("递归后序遍历: ");
+        binaryTree.postOrderTraversal(root);
+        System.out.println();
 //        System.out.print("层序遍历: ");
 //        binaryTree.levelOrderTraversal(root);
 //        System.out.println();

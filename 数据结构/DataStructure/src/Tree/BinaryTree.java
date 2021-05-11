@@ -123,7 +123,26 @@ public class BinaryTree {
 
     // 后序遍历
     void postOrderTraversalNor(Node root) {
+        if (root == null) return;
+        Stack<Node> stack = new Stack<>();
+        Node cur = root;
+        Node prev = null;
+        while (cur != null || !stack.isEmpty()) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            cur = stack.peek();//
+            if (cur.right == null || cur.right == prev) {//如果发现cur.right等于打印的值，进出循环pop()出栈并打印栈顶元素
+                stack.pop();
+                System.out.print(cur.val+" ");
+                prev = cur;//记录cur打印的值
+                cur = null;//cur置为空，目的是不进入内部while循环，防止再次把打印的元素放入栈
 
+            } else {
+                cur = cur.right;
+            }
+        }
     }
 
     /**
