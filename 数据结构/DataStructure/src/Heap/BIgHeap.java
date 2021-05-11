@@ -92,7 +92,7 @@ public class BigHeap {
      * 为了防止破坏堆的结构，删除时并不是直接将堆顶元素删除，而是用数组的最后一个元素替换堆顶元素，
      * 然后通过向下调整方式重新调整成堆
      */
-    public void pop() {
+    public void pop() throws UnsupportedOperationException{
         if (isEmpty()) {
             throw new UnsupportedOperationException("优先级队列为空");
         }
@@ -105,7 +105,7 @@ public class BigHeap {
     private boolean isEmpty() {
         return this.usedSize==0;
     }
-    public int getTop() {
+    public int getTop() throws UnsupportedOperationException{
         if (isEmpty()) {
             throw new UnsupportedOperationException("优先级队列为空");
         }
