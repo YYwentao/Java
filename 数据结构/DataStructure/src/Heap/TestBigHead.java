@@ -1,6 +1,5 @@
 package Heap;
 
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -62,12 +61,14 @@ public class TestBigHead {
         priorityQueue.offer(3000);
         System.out.println(priorityQueue.peek());
     }
-    public static void main1(String[] args) {
+    public static void main(String[] args) {
         BigHeap bigHeap = new BigHeap();
         int[] array = {27,15,19,18,28,34,65,49,25,37};
         bigHeap.createHeap(array);
         bigHeap.push(50);
         bigHeap.pop();
+        System.out.println(Arrays.toString(bigHeap.elem));
+        bigHeap.heapSort();
         System.out.println(Arrays.toString(bigHeap.elem));
     }
 }

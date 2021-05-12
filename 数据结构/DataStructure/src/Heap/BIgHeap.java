@@ -111,4 +111,17 @@ public class BigHeap {
         }
         return this.elem[0];
     }
+    /**
+     * 堆排序
+     */
+    public void heapSort() {
+        int end = this.usedSize-1;
+        while (end > 0) {
+            int tmp = this.elem[end];
+            this.elem[end] = this.elem[0];
+            this.elem[0] = tmp;
+            adjustDown(0,end);
+            end--;
+        }
+    }
 }
