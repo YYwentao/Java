@@ -47,6 +47,7 @@ public class MyHash {
         return count;
     }
     public static void main(String[] args) {
+
         int[] array = {2,2,3,3,4};
         int a =singleNumber(array);
         System.out.println(a);

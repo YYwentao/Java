@@ -14,7 +14,9 @@ import java.util.Random;
 public class BubbleSort {
     public static void bubbleSort(int[] array) {
         for (int i = 0; i <array.length-1 ; i++) {
+            // 设定一个标记，若为false，则表示此次循环没有进行交换，也就是待排序列已经有序，排序已经完成(优化排序)
             boolean fla = false;
+            //从前往后每两个数字比较，把数字大的向后交换，每一趟结束最大值一定在最后
             for (int j = 0; j < array.length -1-i ; j++) {
                 if (array[j] > array[j+1]) {
                     int tmp = array[j];

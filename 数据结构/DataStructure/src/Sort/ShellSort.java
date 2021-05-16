@@ -16,10 +16,10 @@ import java.util.Random;
 public class ShellSort {
 
     private static void shellSort(int[] array) {
-//        int[] arr = {5,3,1};
-//        for (int i = 0 ;i <arr.length; i++) {
-//            shell(array, arr[i]);
-//        }
+        int[] arr = {5,3,1};
+        for (int i = 0 ;i <arr.length; i++) {
+            shell(array, arr[i]);
+        }
         int len = array.length;
         //这样做一般不太好，不一定能得出len都是素数，更不能保证len最后会为1
         while (len>1) {
