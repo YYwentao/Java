@@ -1,9 +1,7 @@
 package Heap;
 
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.PriorityQueue;
+import java.util.*;
 
 /**
  * ClassName: TestBigHead
@@ -61,7 +59,7 @@ public class TestBigHead {
         priorityQueue.offer(3000);
         System.out.println(priorityQueue.peek());
     }
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         BigHeap bigHeap = new BigHeap();
         int[] array = {27,15,19,18,28,34,65,49,25,37};
         bigHeap.createHeap(array);
@@ -71,4 +69,60 @@ public class TestBigHead {
         bigHeap.heapSort();
         System.out.println(Arrays.toString(bigHeap.elem));
     }
+
+    public static void main(String[] args) {
+       
+    }
+    /**
+     * 1046. 最后一块石头的重量
+     */
+//    public int lastStoneWeight(int[] stones) {
+//        //创建一个大堆
+//        PriorityQueue<Integer> maxheap = new PriorityQueue<>(new Comparator<Integer>() {
+//            @Override
+//            public int compare(Integer o1, Integer o2) {
+//                return o2 - o1;
+//            }
+//        });
+//        //把石头放入大堆之中
+//        for (int stone: stones) {
+//            maxheap.offer(stone);
+//        }
+//        while (maxheap.size() > 1) {
+//            int a = maxheap.poll();
+//            int b = maxheap.poll();
+//            if (a > b) {
+//                maxheap.offer(a-b);
+//            }
+//        }
+//        return maxheap.size()>0? maxheap.poll(): 0;
+//    }
+
+    /**
+     *373. 查找和最小的K对数字
+     */
+//        public List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {
+//            PriorityQueue<List<Integer>> maxheap = new PriorityQueue<>(k,(o1,o2)-> {
+//                    return (o2.get(0) + o2.get(1)) - (o1.get(0) + o1.get(1));
+//            });
+//            for (int i = 0; i <Math.min(nums1.length,k) ; i++) {
+//                for (int j = 0; j <Math.min(nums2.length,k) ; j++) {
+//                    if (maxheap.size() == k && (maxheap.peek().get(0) + maxheap.peek().get(1)) < (nums1[i] + nums2[j])) {
+//                        break;
+//                    }
+//                    if (maxheap.size() == k) {
+//                        maxheap.poll();
+//                    }
+//                    List<Integer> pair = new ArrayList<>();
+//                    pair.add(nums1[i]);
+//                    pair.add(nums2[j]);
+//                    maxheap.offer(pair);
+//                }
+//            }
+//            List<List<Integer>> res = new ArrayList<>();
+//            for (int i = 0; i <maxheap.size() && !maxheap.isEmpty()  ; i++) {
+//                res.add(maxheap.poll());
+//            }
+//            return res;
+//        }
 }

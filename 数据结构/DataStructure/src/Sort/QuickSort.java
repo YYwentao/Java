@@ -86,7 +86,7 @@ public class QuickSort {
                 array[start] = tmp;
                 break;
             } else {
-                array[start] = array[end];
+                array[start] = array[end];//关键代码
             }
 
             while (array[start] <= tmp && start < end) {
@@ -97,7 +97,7 @@ public class QuickSort {
                 array[start] = tmp;
                 break;
             } else {
-                array[end] = array[start];
+                array[end] = array[start];//关键代码
             }
         }
         return start;

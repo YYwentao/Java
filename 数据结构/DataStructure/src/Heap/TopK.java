@@ -1,5 +1,7 @@
 package Heap;
 
+import Sort.HeapSort;
+
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -42,10 +44,11 @@ public class TopK {
             }
         }
         System.out.println(minTopK);
+
     }
 
     public static void main(String[] args) {
-        int[] array = {3,6,77,88,99,22,34,545,543};
-        topK(array,3);
+        int[] array = {3,6,77,88,99,22,34,545,543,32,45,111,3434};
+        topK(array,7);
     }
 }

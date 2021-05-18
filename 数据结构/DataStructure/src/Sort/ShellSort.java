@@ -20,12 +20,12 @@ public class ShellSort {
         for (int i = 0 ;i <arr.length; i++) {
             shell(array, arr[i]);
         }
-        int len = array.length;
         //这样做一般不太好，不一定能得出len都是素数，更不能保证len最后会为1
-        while (len>1) {
-            shell(array, len);
-            len = (len/3) +1;
-        }
+//        int len = array.length;
+//        while (len>1) {
+//            shell(array, len);
+//            len = (len/3) +1;
+//        }
         //运行这个相当于直接插入排序了
         shell(array, 1);
     }
@@ -51,11 +51,8 @@ public class ShellSort {
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(100)+1;
         }
-        //System.out.println(Arrays.toString(array));
-        long start = System.currentTimeMillis();
+        System.out.println(Arrays.toString(array));
         shellSort(array);
-        long end = System.currentTimeMillis();
-        System.out.println(end-start);
         System.out.println(Arrays.toString(array));
     }
 }
