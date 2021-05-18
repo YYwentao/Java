@@ -52,3 +52,57 @@ class Solution_387 {
         return -1;
     }
 }
+
+class Solution_165 {
+    public int compareVersion(String version1, String version2) {
+        int len1 = version1.length();
+        int len2 = version2.length();
+        int index1 = 0;
+        int index2 = 0;
+        while(index1 < len1 || index2 < len2) {
+            if(index1 < len1 && version1.charAt(index1) == '.') {
+                index1++;
+            }
+            if(index2 < len2 && version2.charAt(index2) == '.') {
+                index2++;
+            }
+            int sum1 = 0;
+            int sum2 = 0;
+            while(index1 < len1 && version1.charAt(index1) !='.') {
+                sum1 = sum1*10 + version1.charAt(index1) - '0';
+                index1++;
+            }
+            while(index2 < len2 && version2.charAt(index2) !='.') {
+                sum2 = sum2*10 + version2.charAt(index2) - '0';
+                index2++;
+            }
+            if (sum1!=sum2)
+                return sum1<sum2?-1:1;
+        }
+        return 0;
+    }
+}
+
+class Solution_349 {
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
