@@ -1,7 +1,5 @@
 package MapSet;
 
-import javax.xml.soap.Node;
-
 /**
  * ClassName: MyHashBuck
  * Description:
@@ -28,7 +26,9 @@ public class MyHashBuck {
         this.elem = new Node[8];
     }
 
-    //put
+    /**
+     *  put方法
+     */
     public void put(int key,int value) {
         int index = key % this.elem.length;
         Node cur = elem[index];
@@ -72,14 +72,34 @@ public class MyHashBuck {
         return this.usedSize*1.0/elem.length;
     }
 
+    /**
+     * get方法
+     */
+    public int get(int key) {
+        //获取下标
+        int index = key % this.elem.length;
+        Node cur = elem[index];
+
+        while (cur != null) {
+            if (cur.key == key) {
+                return cur.value;
+            }
+            cur = cur.next;
+        }
+        return  -1;
+    }
+
     public static void main(String[] args) {
         MyHashBuck hashBuck = new MyHashBuck();
-        hashBuck.put(9,99999);
-        hashBuck.put(11,111111);
-        hashBuck.put(3,3333333);
-        hashBuck.put(5,7777777);
-        hashBuck.put(2,2222222);
-        hashBuck.put(1,1111111111);
+        hashBuck.put(9,999);
+        hashBuck.put(11,111);
+        hashBuck.put(3,333);
+        hashBuck.put(5,777);
+        hashBuck.put(2,222);
+        hashBuck.put(1,111);
+        //System.out.println(hashBuck);
         System.out.println("==========");
+        System.out.println(hashBuck.get(3));
+        System.out.println(hashBuck.get(9));
     }
 }
