@@ -15,6 +15,7 @@ import java.util.HashSet;
 public class Test20210520 {
     class Solution_819 {
         public String mostCommonWord(String paragraph, String[] banned) {
+
             HashSet<String> banSet = new HashSet<>();
             for(String s : banned){
                 banSet.add(s);
