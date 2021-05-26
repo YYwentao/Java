@@ -29,4 +29,8 @@ public class Test20210501 {
             }
             return ret.toString();
         }
+
+    public static void main(String[] args) {
+
+    }
 }
