@@ -38,15 +38,5 @@ class Test_1 {
 }
 
 public class Test20210526 {
-    public int i;
-    static String s;
-    void method1(){}
-    static void method2(){}
-}
 
-class Test_2 {
-    public static void main1(String[] args) {
-        Test20210526 b = new Test20210526();
-        Test20210526.method2();
-    }
 }

@@ -13,14 +13,6 @@ import java.util.HashMap;
 class Test20210517 {
 }
 //
-class Test{
-    public String name="abc";
-    public static void main(String[] args){
-        Test test=new Test();
-        Test testB=new Test();
-        System.out.println(test.equals(testB)+","+test.name.equals(testB.name));
-    }
-}
 //
  class TestObj{
     public static void main(String[] args){

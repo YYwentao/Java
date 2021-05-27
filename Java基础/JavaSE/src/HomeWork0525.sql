@@ -26,7 +26,7 @@ create table  if not exists purchase(
 create table if not exists books (
     book_name varchar (32) comment '图书名称',
     author varchar (32) comment '图书作者',
-    price int comment '图书价格',
+    price decimal (4,2) comment '图书价格',
     categorg varchar (16) comment '图书分类'
 );
 --设计一张老师表，包含以下字段：姓名、年龄、身高、体重、性别、学历、生日、身份证号
@@ -43,12 +43,34 @@ create table if not exists teacher (
 --设计一张商品表，包含以下字段：商品名称、商品价格、商品库存、商品描述
 create table if not exists goods_one(
     name varchar(16) comment '商品名',
-    price int comment '商品价格',
+    price decimal(4,2) comment '商品价格',
     inventory int comment '商品库存',
     des varchar (32) comment '商品描述'
 );
+insert into goods_one values ("学生书包",18.91,101,"无");
 
+create  table if not exists student(
+    id int,
+    name varchar (20),
+    qq varchar (11)
+);
 
+create table exam_result(
+    id int,
+    name varchar(20),
+    chinese decimal (3,1),
+    math decimal (3,1),
+    english decimal (3,1)
+);
+
+insert into exam_result(id,name,chinese,math,english) values
+    (1,"唐三藏",67,98,56),
+    (2,"孙悟空",87.5,78,77),
+    (3,"猪悟能",88,98,90),
+    (4,"曹孟德",82,84,67),
+    (5,"刘玄德",55.5,85,45),
+    (6,"孙权",70,73,78.5),
+    (7,"宋公明",75,65,30);
 
 
 
