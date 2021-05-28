@@ -11,17 +11,24 @@ package Test202105;
 public class Test20210528 {
 
 }
-class Base{
-    public Base(String s){
-        System.out.print("B");
+
+class HelloA {
+    public HelloA() {
+        System.out.println("I'm A class ");
+    }
+    static {
+        System.out.println("static A");
     }
 }
-class Derived extends Base{
-    public Derived (String s) {
-        super(s);
-        System.out.print("D");
+class HelloB extends HelloA {
+    public HelloB() {
+        System.out.println("I'm B class");
     }
-    public static void main(String[] args){
-        new Derived("C");
+    static {
+        System.out.println("static B");
+    }
+    public static void main(String[] args) {
+        new HelloB();
+        //
     }
 }
