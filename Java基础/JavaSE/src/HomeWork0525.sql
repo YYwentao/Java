@@ -72,11 +72,18 @@ insert into exam_result(id,name,chinese,math,english) values
     (6,"孙权",70,73,78.5),
     (7,"宋公明",75,65,30);
 
+--查询article文章表中，发表日期create_date在2019年1月1日上午10点30分至2019年11月10日下午4点2分的文章
+select article_name from article where create_date between "2019-01-01 10:30:00" and "2019-11-10 16:02:00";
 
+create table article (
+    article_name varchar (64),
+    create_date datetime
+);
+insert into article values("混元太极门马保国",now());
+insert into article values("嫦娥四号传回月球背影像图","2019-01-03 10:26:00");
+insert into article (create_date) values (now());
 
-
-
-
+select article_name from article where create_date between "2019-01-01 10:30:00" and "2019-11-10 16:02:00";
 
 
 
