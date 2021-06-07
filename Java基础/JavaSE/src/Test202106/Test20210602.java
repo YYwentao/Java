@@ -9,14 +9,14 @@ package Test202106;
  * @since JDK 1.8
  */
 
-
-
 public class Test20210602 {
     public static void main(String [] args){
-        System.out.println(new B().getValue());
+        B b = new B();
+        int num = b.getValue();
+        System.out.println(num);
     }
     static class A{
-        protected int value;
+        protected int value;//10
         public A(int v) {
             setValue(v);
         }
