@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JavaSE:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JavaSE_jar</output-path>
+    <root id="archive" name="JavaSE.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="JavaSE" />
+    </root>
+  </artifact>
+</component>
