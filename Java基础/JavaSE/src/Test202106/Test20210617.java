@@ -1,6 +1,6 @@
 package Test202106;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.*;
 import java.util.Scanner;
 
@@ -19,7 +19,6 @@ public class Test20210617 {
         server.start();
     }
 }
-
 
 class UdpEchoServer {
     /**
@@ -81,7 +80,28 @@ class  TcpEchoServer {
         serverSocket = new ServerSocket(port);
     }
 
-    public void start() {
-        
+    public void start() throws IOException {
+        System.out.println("服务器启动: ");
+        while (true) {
+            // 1). 先从内核中获取一个 Tcp 连接
+            Socket clientSocket =  serverSocket.accept();
+            // 2). 处理这个 TCP 连接
+            processConnection(clientSocket);
+        }
+    }
+
+    private void processConnection(Socket clientSocket) {
+        System.out.printf("[%s:%d] 客户端上线\n",clientSocket.getInetAddress().toString(),
+                clientSocket.getPort());
+        //通过 clientSocket 来和客户端交互,先做好准备工作,获取到 clientSocket 中的流对象
+        try {BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
+            //进一步就可以完成后面的操作了 TODO
+            // 1). 读取请求并解析
+            // 2). 根据解析计算响应
+            // 3). 把响应写回给客户端
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
