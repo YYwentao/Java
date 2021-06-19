@@ -98,6 +98,7 @@ class TcpEchoClient {
                 }
                 //2.构建一个请求发送给服务器. 此处的 \n 是为了和服务器中的 readLine 对应
                 bufferedWriter.write(request + "\n");
+                bufferedWriter.flush();
                 //3.读取服务器的响应数据
                 String response = bufferedReader.readLine();
                 //4.把响应返回给显示器
