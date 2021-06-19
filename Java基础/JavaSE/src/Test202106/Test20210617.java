@@ -18,6 +18,11 @@ public class Test20210617 {
         UdpEchoServer server = new UdpEchoServer(9090);
         server.start();
     }
+
+    public static void main(String[] args) throws IOException {
+        TcpEchoServer server = new TcpEchoServer(9090);
+        server.start();
+    }
 }
 
 class UdpEchoServer {
@@ -96,12 +101,27 @@ class  TcpEchoServer {
         //通过 clientSocket 来和客户端交互,先做好准备工作,获取到 clientSocket 中的流对象
         try {BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
-            //进一步就可以完成后面的操作了 TODO
-            // 1). 读取请求并解析
-            // 2). 根据解析计算响应
-            // 3). 把响应写回给客户端
+            //进一步就可以完成后面的操作了
+            //此处可以实现一个"长连接"的服务器,一个连接处理过程，可以处理多个服务器和客户端
+            while (true) {
+                // 1). 读取请求并解析(此处的 readLine 对应的是客户端发送的请求格式,必须是按行发送)
+                String request = bufferedReader.readLine();
+                // 2). 根据解析计算响应
+                String response = process(request);
+                // 3). 把响应写回给客户端(客户端要按行来读)
+                bufferedWriter.write(response + "\n");
+                //打印日志
+                System.out.printf("[%s:%d] req: %s; resp: %s\n",clientSocket.getInetAddress().toString(),
+                        clientSocket.getPort(),request,response);
+            }
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.printf("[%s:%d] 客户端下线\n",clientSocket.getInetAddress().toString(),
+                    clientSocket.getPort());
         }
+    }
+
+    public String process(String request) {
+        return request;
     }
 }
