@@ -61,15 +61,21 @@ public class HtmlGenerator {
         stringBuilder.append("<hr>");
         //文章列表，显示文章标题
         for (Article article:list) {
-            stringBuilder.append(String.format("<div style=\"height:30px; line-height:30px\"> <a href=\"article?articleId=%d\"> %d.%s </a></div>",
-                    article.getArticleId(),article.getArticleId(),article.getTitle()));
+            stringBuilder.append(String.format("<div style=\"height:30px; line-height:30px\"> <a href=\"article?articleId=%d\"> %d.%s </a>" +
+                            "<a href=\"deleteArticle?articleId=%d\" style=\"color:red\"> 删除 </a></div>",
+                    article.getArticleId(),article.getArticleId(),article.getTitle(),article.getArticleId()));
         }
         stringBuilder.append("<hr>");
         stringBuilder.append(String.format("<div>当前共有文章 %d 篇</div>",list.size()));
 
         //这里新增发布文章区域
         stringBuilder.append("<br>");
-        stringBuilder.append("<hr>");
+        stringBuilder.append("<br>");
+        stringBuilder.append("<br>");
+        stringBuilder.append("<br>");
+        stringBuilder.append("<br>");
+        stringBuilder.append("<br>");
+
         stringBuilder.append("<div> 发布文章 </div>");
         stringBuilder.append("<div>");
         stringBuilder.append("<form action=\"article\" method=\"post\">");
@@ -99,7 +105,9 @@ public class HtmlGenerator {
         stringBuilder.append("<hr>");
         stringBuilder.append(String.format("<h5>作者: %s</h5>",author.getName()));
         stringBuilder.append("<hr>");
-        stringBuilder.append(String.format("<div>内容: %s</div>",article.getContent()));
+
+        stringBuilder.append(String.format("<div>内容: %s</div>",article.getContent()
+                .replace("\n","<br>")));
 
         stringBuilder.append("</body>");
         stringBuilder.append("</html>");
