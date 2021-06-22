@@ -19,7 +19,7 @@ import java.sql.SQLException;
 //来管理唯一一个DataSource实例，此处实现懒汉式的单例
 public class DBUtil {
     private static DataSource dataSource= null;
-    private static final String URL ="jdbc:mysql://127.0.0.1:3306/java0621_blogdemo?characterEncoding=uft-8&useSSL=true";
+    private static final String URL ="jdbc:mysql://127.0.0.1:3306/java0621_blogdemo?characterEncoding=utf8&useSSL=false";
     private static final String USER = "root";
     private static final String PASSWORD = "";
 

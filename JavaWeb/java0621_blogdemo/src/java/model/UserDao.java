@@ -67,4 +67,47 @@ public class UserDao {
         }
         return null;
     }
+
+    //通过用户 Id 查找用户
+    public User selectById(int userId) {
+        //1.建立数据库连接
+        Connection connection = DBUtil.getConnection();
+        //2.拼装 sql 语句
+        String sql = "select * from user where userId = ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1,userId);
+            //3.执行 sql 语句
+            resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                User user = new User();
+                user.setUserId(resultSet.getInt("userId"));
+                user.setName(resultSet.getString("name"));
+                user.setPassword(resultSet.getString("password"));
+                return user;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBUtil.close(connection,statement,resultSet);
+        }
+        return null;
+    }
+
+    public static void main(String[] args) {
+        //1.测试 add 方法
+        UserDao userDao = new UserDao();
+//        User user = new User();
+//        user.setName("dwt");
+//        user.setPassword("123456");
+//        userDao.add(user);
+
+        //2.测试 selectByName 方法
+//        User user = userDao.selectByName("dwt");
+//        System.out.println(user);
+    }
+
+
 }
