@@ -98,7 +98,7 @@ public class UserDao {
 
     public static void main(String[] args) {
         //1.测试 add 方法
-        UserDao userDao = new UserDao();
+        //UserDao userDao = new UserDao();
 //        User user = new User();
 //        user.setName("dwt");
 //        user.setPassword("123456");

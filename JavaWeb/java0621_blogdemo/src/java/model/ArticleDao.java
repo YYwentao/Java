@@ -130,7 +130,7 @@ public class ArticleDao {
 
     public static void main(String[] args) {
         //1.测试 新增文章 add()
-        ArticleDao articleDao = new ArticleDao();
+        //ArticleDao articleDao = new ArticleDao();
 //        Article article = new Article();
 //        article.setTitle("关于如何学好 javaWeb 编程语言的三个方法");
 //        article.setContent("第一个方法，第二个方法，第三方法");

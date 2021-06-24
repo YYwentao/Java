@@ -61,9 +61,9 @@ public class HtmlGenerator {
         stringBuilder.append("<hr>");
         //文章列表，显示文章标题
         for (Article article:list) {
-            stringBuilder.append(String.format("<div style=\"height:30px; line-height:30px\"> <a href=\"article?articleId=%d\"> %d.%s </a>" +
+            stringBuilder.append(String.format("<div style=\"height:30px; line-height:30px\"> <a href=\"article?articleId=%d\"> 标题: %s </a>" +
                             "<a href=\"deleteArticle?articleId=%d\" style=\"color:red\"> 删除 </a></div>",
-                    article.getArticleId(),article.getArticleId(),article.getTitle(),article.getArticleId()));
+                    article.getArticleId(),article.getTitle(),article.getArticleId()));
         }
         stringBuilder.append("<hr>");
         stringBuilder.append(String.format("<div>当前共有文章 %d 篇</div>",list.size()));
