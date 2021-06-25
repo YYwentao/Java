@@ -34,6 +34,6 @@ public abstract class HistorySheet {
     public void setDesc(String desc) {
         this.desc = desc;
     }
-    //价格
+    //计算价格
     public abstract float cost();
 }

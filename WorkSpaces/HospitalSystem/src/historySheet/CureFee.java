@@ -16,12 +16,12 @@ public class CureFee extends Type {
     @Override
     public float cost() {
         //计算价格
-        return getPrice() + getHistorySheet().getPrice();
+        return getPrice() + getHistorySheet().cost();
     }
 
     @Override
     public String getDesc() {
         //重新描述
-        return super.getDesc() + getHistorySheet().getDesc();
+        return getHistorySheet().getDesc() + super.getDesc() ;
     }
 }

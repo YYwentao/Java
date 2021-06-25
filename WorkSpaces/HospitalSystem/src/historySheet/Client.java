@@ -10,14 +10,16 @@ package historySheet;
 public class Client {
     public static void main(String[] args) {
         //基础费用(必定存在)
-        BasicFee basicFee = new BasicFee();
-        System.out.println(basicFee.getDesc() +" "+ basicFee.cost()+"元");
+        HistorySheet fee = new Fee();
+        System.out.println(fee.getDesc() +" "+ fee.cost()+"元");
         System.out.println("=======================");
-        //+治疗费用
-        CureFee cureFee = new CureFee(basicFee);
-        System.out.println(cureFee.getDesc() +" "+ cureFee.cost()+"元");
+        //基础费用+其他费用
+        fee = new OtherFee(fee);
+        System.out.println(fee.getDesc() +" "+ fee.cost()+"元");
         System.out.println("=======================");
-        //+其他费用
-        
+        //基础费用+其他费用+治疗费用
+        fee = new CureFee(fee);
+        System.out.println(fee.getDesc() +" "+ fee.cost()+"元");
+        System.out.println("=======================");
     }
 }

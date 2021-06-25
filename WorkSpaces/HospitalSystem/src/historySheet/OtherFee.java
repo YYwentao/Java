@@ -11,18 +11,18 @@ public class OtherFee extends Type{
 
 
     public OtherFee(HistorySheet historySheet) {
-        super(historySheet, 50, "+其他费用");
+        super(historySheet, 50.4f, "+其他费用");
     }
 
     @Override
     public float cost() {
         //重新计算价格
-        return getPrice() + getHistorySheet().getPrice();
+        return super.getPrice() + getHistorySheet().cost();
     }
 
     @Override
     public String getDesc() {
         //重新描述
-        return super.getDesc() + getHistorySheet().getDesc();
+        return  getHistorySheet().getDesc() + super.getDesc();
     }
 }
