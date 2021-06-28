@@ -42,5 +42,14 @@
         <url-pattern>/deleteArticle</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>UpdateServlet</servlet-name>
+        <servlet-class>servlet.UpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateServlet</servlet-name>
+        <url-pattern>/article/articleId</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

@@ -82,7 +82,7 @@ public class ArticleServlet extends HttpServlet {
             return;
         }
         User user = (User) httpSession.getAttribute("user");//获取Session对象里面的user对象
-        //2.从请求中读取浏览器提交的数据(title,context),并进行简单校验
+        //2.从请求中读取浏览器提交的数据(title,content),并进行简单校验
         String title = req.getParameter("title");
         String context = req.getParameter("context");
         if (title == null || "".equals(title) || context == null || "".equals(context)) {
@@ -102,4 +102,5 @@ public class ArticleServlet extends HttpServlet {
         resp.getWriter().write(html);
         return;
     }
+
 }

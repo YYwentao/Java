@@ -20,7 +20,7 @@ public class ArticleDao {
         //1.获取数据库连接
         Connection connection = DBUtil.getConnection();
         //2.拼装 sql 语句
-        String sql = "insert into article  values(null,?,?,?)";
+        String sql = "insert into article values(null,?,?,?)";
         PreparedStatement statement = null;
         try {
             statement = connection.prepareStatement(sql);
@@ -128,9 +128,35 @@ public class ArticleDao {
         }
     }
 
+    //5.修改文章的内容 或 标题
+    public void update(Article article) {
+        //1.连接数据库
+        Connection connection = DBUtil.getConnection();
+        //2.拼装 sql 语句
+        String sql = "update article set title = ?,content = ? where articleId = ?";
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setString(1,article.getTitle());
+            statement.setString(2,article.getContent());
+            statement.setInt(3,article.getArticleId());
+            // 3.执行 sql 语句
+            int ret = statement.executeUpdate();
+            if (ret != 1) {
+                System.out.println("修改文章内容失败");
+                return;
+            }
+            System.out.println("修改文章内容成功");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBUtil.close(connection,statement,null);
+        }
+    }
+
     public static void main(String[] args) {
         //1.测试 新增文章 add()
-        //ArticleDao articleDao = new ArticleDao();
+//        ArticleDao articleDao = new ArticleDao();
 //        Article article = new Article();
 //        article.setTitle("关于如何学好 javaWeb 编程语言的三个方法");
 //        article.setContent("第一个方法，第二个方法，第三方法");
@@ -147,5 +173,10 @@ public class ArticleDao {
 
         //4.测试删除指定ID的文章
 //        articleDao.deleteByID(2);
+        //5.测试修改文章内容或标题
+//        article.setTitle("我不是标题");
+//        article.setContent("我也不是内容");
+//        article.setArticleId(3);
+//        articleDao.update(article);
     }
 }
