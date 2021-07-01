@@ -8,6 +8,7 @@ package historySheet;
     装饰器模式
  */
 public abstract class HistorySheet {
+
     private float price; //价格
     private String desc; //描述
 

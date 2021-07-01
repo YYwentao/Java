@@ -7,7 +7,7 @@ package structure;
 
  */
 public abstract class Hospital {
-    //医生的名称
+    //名称
     protected String name;
     //层级
     protected int level;

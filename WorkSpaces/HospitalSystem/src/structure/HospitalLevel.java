@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ClassName: Hospital
+ * ClassName: HospitalLevel
  * Description:     医院结构层次(菜单类)
  * date: 2021/6/29 15:21
  */

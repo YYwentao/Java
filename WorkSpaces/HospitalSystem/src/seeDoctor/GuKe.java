@@ -10,6 +10,6 @@ package seeDoctor;
 public class GuKe extends AbstractClass{
     @Override
     public void register() {
-        System.out.println("挂骨科,选择骨科1号医生");
+        System.out.println("  1.挂骨科,选择骨科1号医生");
     }
 }

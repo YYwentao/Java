@@ -9,6 +9,6 @@ package seeDoctor;
 public class ShenJingWaiKe extends AbstractClass{
     @Override
     public void register() {
-        System.out.println("挂神经外科,选择神经外科1号医生");
+        System.out.println("  1.挂神经外科,选择神经外科1号医生");
     }
 }

@@ -1,15 +1,35 @@
-package structure;
+import seeDoctor.XiaoHuaNeiKe;
+import structure.Doctor;
+import structure.Hospital;
+import structure.HospitalLevel;
 
 /**
  * ClassName: Finish
  * Description:
- * date: 2021/6/29 17:45
+ * date: 2021/7/1 14:11
  *
  * @author wt
  * @since JDK 1.8
  */
-public class Client {
+public class Finish {
     public static void main(String[] args) {
+        // 1.病人看病显示医院结构
+        System.out.println("一、病人看病,来到医院后显示医院结构体系[组合模式]");
+        Structure();
+        // 2.挂号，选择选择诊疗科目、选择医生
+        System.out.println("二、进入医院看病流程[模板方法模式]");
+        SeeDoctor();
+    }
+
+    private static void SeeDoctor() {
+        //消化内科病人看病流程
+        //创建对象
+        XiaoHuaNeiKe person = new XiaoHuaNeiKe();
+        //调用看病这个方法
+        person.seeDoctor();
+    }
+
+    private static void Structure() {
         //创建菜单项
         Hospital menu1 = new HospitalLevel("消化内科",3);
         menu1.add(new Doctor("1号消化内科医生",4));

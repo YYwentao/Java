@@ -10,6 +10,6 @@ public class XinXueGuanKe extends AbstractClass{
 
     @Override
     public void register() {
-        System.out.println("挂心血管科,选择心血管科1号医生");
+        System.out.println("  1.挂心血管科,选择心血管科1号医生");
     }
 }

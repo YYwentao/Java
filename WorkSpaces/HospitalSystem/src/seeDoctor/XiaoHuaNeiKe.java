@@ -10,7 +10,7 @@ public class XiaoHuaNeiKe extends AbstractClass {
 
     @Override
     public void register() {
-        System.out.println("挂消化内科,选择消化内科1号医生");
+        System.out.println("  1.挂消化内科,选择消化内科1号医生");
     }
 }
 
@@ -18,7 +18,7 @@ class XiaoHuaNeiKe1 extends AbstractClass {
 
     @Override
     public void register() {
-        System.out.println("挂消化内科,选择消化内科2号医生");
+        System.out.println("  1.挂消化内科,选择消化内科2号医生");
     }
 }
 

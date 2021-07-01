@@ -2,7 +2,7 @@ package historySheet;
 
 /**
  * ClassName: Fee
- * Description: 具体构建角色
+ * Description: 具体构建角色类
  * date: 2021/6/24 21:37
  *
     基础诊疗费
