@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
             resp.getWriter().write(html);
             return;
         }
-        //4.匹配成功说明登录成功,并创建一个 Session
+        //4.匹配成功说明登录成功,并创建一个 Session 对象
         HttpSession httpSession = req.getSession(true);
         httpSession.setAttribute("user",user);
         //5.返回一个登录成功的提示页面
