@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="HomeWork20210420:war exploded">
+    <output-path>$PROJECT_DIR$/HomeWork20210420/target/HomeWork20210420</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>HomeWork20210420</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="HomeWork20210420" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.49" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/HomeWork20210420/target/HomeWork20210420/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="HomeWork20210420/web/Web" />
+    </root>
+  </artifact>
+</component>

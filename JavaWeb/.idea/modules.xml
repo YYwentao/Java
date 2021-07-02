@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HomeWork0420/HomeWork0420.iml" filepath="$PROJECT_DIR$/HomeWork0420/HomeWork0420.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HomeWork20210420/HomeWork20210420.iml" filepath="$PROJECT_DIR$/HomeWork20210420/HomeWork20210420.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/JavaWeb.iml" filepath="$PROJECT_DIR$/.idea/JavaWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day01-javaweb-01/day01-javaweb-01.iml" filepath="$PROJECT_DIR$/day01-javaweb-01/day01-javaweb-01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day01_maven_01/day01_maven_01.iml" filepath="$PROJECT_DIR$/day01_maven_01/day01_maven_01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day02_javaweb_02/day02_javaweb_02.iml" filepath="$PROJECT_DIR$/day02_javaweb_02/day02_javaweb_02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java0621_blogdemo/java0621_blogdemo.iml" filepath="$PROJECT_DIR$/java0621_blogdemo/java0621_blogdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parent_version_manger/parent_version_manger.iml" filepath="$PROJECT_DIR$/parent_version_manger/parent_version_manger.iml" />
+    </modules>
+  </component>
+</project>
