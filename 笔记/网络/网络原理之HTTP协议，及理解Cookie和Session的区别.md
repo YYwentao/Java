@@ -1,7 +1,6 @@
 ﻿
 
-
-@[TOC](文章目录)
+[TOC]
 
 
 <hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
@@ -57,7 +56,7 @@
 
 ## 3. HTTP的方法
  &emsp;&emsp;<font color=black >其中GET和POST方法最为重要，[点击了解GET和POST的区别](https://blog.csdn.net/qq_41603622/article/details/118309544)，其他的方法如PUT，HEAD，DELETE方法我们也应该适当了解
- 
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210630180654831.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNjAzNjIy,size_16,color_FFFFFF,t_70)
 
 ## 4. HTTP的状态码
@@ -96,17 +95,17 @@
  &emsp;&emsp;<font color=black >Cookie 简单来说就是一个字符串，是一种==键值对结构的字符串==。在浏览器里面保存着(每个域名/地址都有自己的Cookie)，访问不同的网站会产生不同的 Cookie ，Cookie 里面键值对里面的内容是什么(有哪些键，哪些值，是开发那些网站的程序员自己约定的)，外人都不知道。
 
 <font color=black >**2. Cookie从何而来？**
- 
+
  &emsp;&emsp;<font color=black >Cookie 的内容来自与服务器。在 HTTP 响应的 header 部分中有一个或多个 Set-Cookie 字段，Set-Cookie 字段里面的内容就会被浏览器保存下来。
 
 <font color=black >**3. Cookie在什么时候出现？**
- 
+
  &emsp;&emsp;<font color=black >浏览器保存好服务器返回的 Cookie 之后，如果下次还要访问这个服务器/网站，此时的请求中就会自动加上这个 Cookie 字段，字段里的值就是第一次访问这个服务器时返回的 Set-Cookie 字段里的内容
 
 <font color=black >**4. Cookie有什么作用？**
 
  &emsp;&emsp;<font color=black > Cookie 的作用是非常大的，最典型的就是识别用户身份。服务器同一时刻可能会收到大量的 HTTP 请求，这些请求分别来自于哪些用户，服务器必须要明确的识别处理，那么服务器又是如何识别的呢？先看下面这个图
- 
+
  <font color=#999AAA >如图所示</form>
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210630214207798.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNjAzNjIy,size_16,color_FFFFFF,t_70)
 >如图所示(重点)：浏览器(客户端)首次访问服务器(请求中是不存在Cookie的)，当用户访问成功后，服务器就会创建一种数据结构来保存用户的信息，这种数据结构就是 Hash 表(Key-Value，唯一的键对应唯一的值)，还会在服务器内部生成一个Session对象(用来保存用户信息)，并且给这个Session对象(Value)分配唯一一个SessionId(Key)，然后再把这个 SessionId 和 Session 对象以键值对的形式插入到 Hash 表中。服务器这边处理完成了之后，返回给客户端的响应中 Set-Cookie 字段里就包含当前SessionId，而在客户端这边就把这个值保存在了本地，被称为 Cookie(本质上是字符串，上图中使用数字表示是为了方便理解)。
