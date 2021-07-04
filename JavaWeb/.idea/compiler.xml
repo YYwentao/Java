@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="java0621_blogdemo" />
         <module name="day01-javaweb-01" />
+        <module name="rocket_maven" />
         <module name="HomeWork20210420" />
         <module name="day02_javaweb_02" />
         <module name="HomeWork0420" />
@@ -26,6 +27,7 @@
       <module name="java0620_blogdemo" target="1.5" />
       <module name="java0621_blogdemo" target="1.7" />
       <module name="parent_version_manger" target="1.7" />
+      <module name="rocket_maven" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
