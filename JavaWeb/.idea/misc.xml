@@ -7,6 +7,7 @@
     <file type="web" url="file://$PROJECT_DIR$/HomeWork20210420" />
     <file type="web" url="file://$PROJECT_DIR$/Java0617_blogdemo" />
     <file type="web" url="file://$PROJECT_DIR$/java0621_blogdemo" />
+    <file type="web" url="file://$PROJECT_DIR$/maven_AddServlet" />
     <file type="web" url="file://$PROJECT_DIR$/rocket_maven" />
   </component>
   <component name="JavaScriptSettings">
@@ -24,6 +25,7 @@
         <option value="$PROJECT_DIR$/Java0422_blogdemo/pom.xml" />
         <option value="$PROJECT_DIR$/java0621_blogdemo/pom.xml" />
         <option value="$PROJECT_DIR$/rocket_maven/pom.xml" />
+        <option value="$PROJECT_DIR$/maven_AddServlet/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
