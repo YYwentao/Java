@@ -6,20 +6,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * ClassName: AddServlet
+ * ClassName: NameServlet
  * Description:
- * date: 2021/7/6 23:32
- *
+ * date: 2021/7/7 17:32
 
  */
-@WebServlet("/add")
-public class AddServlet extends HttpServlet {
+@WebServlet("/hello")
+public class NameServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String a = req.getParameter("a");
-        String b = req.getParameter("b");
-        int result = Integer.parseInt(a) + Integer.parseInt(b);
-        resp.setContentType("text/html;charset=utf-8");
-        resp.getWriter().write("<h3> 结果 = " + result + "</h3>");
+        req.setCharacterEncoding("utf-8");
+        String name = req.getParameter("name");
+        resp.setContentType("text/html; charset=utf-8");
+        resp.getWriter().write("<h1> name = " + name+ "</h1>");
     }
 }
