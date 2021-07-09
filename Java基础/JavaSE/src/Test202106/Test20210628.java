@@ -1,5 +1,9 @@
 package Test202106;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
 /**
  * ClassName: Test20210628
  * Description:
@@ -11,6 +15,26 @@ package Test202106;
 
 public class Test20210628 {
     public static void main(String[] args) {
-
+        Scanner scan = new Scanner(System.in);
+        //while(scan.hasNext()) {
+        Map<Character,Integer> map = new HashMap<>();
+        String str = scan.nextLine();
+        for(int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if(map.get(ch) == null) {
+                map.put(ch,1);
+            } else {
+                map.put(ch,map.get(ch)+1);
+            }
+        }
+        for(int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if(map.get(ch) == 1) {
+                System.out.println(ch);
+                break;
+            }
+        }
+        System.out.println(-1);
+        //}
     }
 }
