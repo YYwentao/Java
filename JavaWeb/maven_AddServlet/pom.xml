@@ -27,7 +27,7 @@
     <packaging>war</packaging>
 
     <build>
-        <finalName>test</finalName>
+        <finalName>AddServlet</finalName>
     </build>
 
 </project>
