@@ -1,6 +1,7 @@
-package model;
+package dao;
 
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
+
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,33 +10,31 @@ import java.sql.SQLException;
 
 /**
  * ClassName: DBUtil
+ * Description: 设置数据库连接和释放
+ * date: 2021/7/11 23:07
  */
-//管理数据库连接: 1.建立连接, 2.断开连接
-//JDBC 中使用 DataSource 来管理连接
-//DBUtil 相当于是对 DataSource 在稍微包装一层,DBUtil 本质上就是实现一个单例模式，
-//来管理唯一一个DataSource实例，此处实现懒汉式的单例
 public class DBUtil {
-    private static DataSource dataSource= null;
-    private static final String URL ="jdbc:mysql://127.0.0.1:3306/java0621?characterEncoding=utf8&useSSL=false";
+    private static DataSource dataSource = null;
+    private static final String URL ="jdbc:mysql://127.0.0.1:3306/rocketblog?characterEncoding=utf8&useSSL=false";
     private static final String USER = "root";
     private static final String PASSWORD = "";
 
+    //单例模式创建一个数据源 ,暂时是线程不安全
     public static DataSource getDataSource() {
+        // 看一下 dataSource 当前是否已经持有一个实例了.
+        // 如果没有持有, 就创建一个新的.
+        // 如果持有了, 就不必创建新的, 直接返回之前的.
         if (dataSource == null) {
-            synchronized (DBUtil.class) {
-                if (dataSource == null) {
-                    dataSource = new MysqlDataSource();
-                    //给 DataSource 设置
-                    ((MysqlDataSource) dataSource).setUrl(URL);
-                    ((MysqlDataSource) dataSource).setUser(USER);
-                    ((MysqlDataSource) dataSource).setPassword(PASSWORD);
-                }
-            }
+            MysqlDataSource mysqlDataSource = new MysqlDataSource();
+            mysqlDataSource.setUrl(URL);
+            mysqlDataSource.setUser(USER);
+            mysqlDataSource.setPassword(PASSWORD);
+            dataSource = mysqlDataSource;
         }
         return dataSource;
     }
 
-    //通过这个方法获取连接
+    // 1. 通过这个代码获取连接
     public static Connection getConnection() {
         try {
             return getDataSource().getConnection();
@@ -44,8 +43,7 @@ public class DBUtil {
         }
         return null;
     }
-
-    //通过这个方法断开连接
+    // 2. 通过这个代码释放资源
     public static void close(Connection connection, PreparedStatement statement, ResultSet resultSet) {
         try {
             if (resultSet != null) {
@@ -61,4 +59,5 @@ public class DBUtil {
             e.printStackTrace();
         }
     }
+
 }

@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/java0621_blogdemo/java0621_blogdemo.iml" filepath="$PROJECT_DIR$/java0621_blogdemo/java0621_blogdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/maven_AddServlet/maven_AddServlet.iml" filepath="$PROJECT_DIR$/maven_AddServlet/maven_AddServlet.iml" />
       <module fileurl="file://$PROJECT_DIR$/parent_version_manger/parent_version_manger.iml" filepath="$PROJECT_DIR$/parent_version_manger/parent_version_manger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rocket_blog/rocket_blog.iml" filepath="$PROJECT_DIR$/rocket_blog/rocket_blog.iml" />
       <module fileurl="file://$PROJECT_DIR$/rocket_maven/rocket_maven.iml" filepath="$PROJECT_DIR$/rocket_maven/rocket_maven.iml" />
     </modules>
   </component>

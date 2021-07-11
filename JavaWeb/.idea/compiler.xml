@@ -11,6 +11,7 @@
         <module name="rocket_maven" />
         <module name="maven_AddServlet" />
         <module name="HomeWork20210420" />
+        <module name="rocket_blog" />
         <module name="day02_javaweb_02" />
         <module name="HomeWork0420" />
         <module name="day01_maven_01" />
@@ -29,6 +30,7 @@
       <module name="java0621_blogdemo" target="1.7" />
       <module name="maven_AddServlet" target="1.8" />
       <module name="parent_version_manger" target="1.7" />
+      <module name="rocket_blog" target="1.8" />
       <module name="rocket_maven" target="1.8" />
     </bytecodeTargetLevel>
   </component>
