@@ -8,6 +8,7 @@
     <file type="web" url="file://$PROJECT_DIR$/Java0617_blogdemo" />
     <file type="web" url="file://$PROJECT_DIR$/java0621_blogdemo" />
     <file type="web" url="file://$PROJECT_DIR$/maven_AddServlet" />
+    <file type="web" url="file://$PROJECT_DIR$/myMusicServlet" />
     <file type="web" url="file://$PROJECT_DIR$/rocket_blog" />
     <file type="web" url="file://$PROJECT_DIR$/rocket_maven" />
   </component>
@@ -28,6 +29,8 @@
         <option value="$PROJECT_DIR$/rocket_maven/pom.xml" />
         <option value="$PROJECT_DIR$/maven_AddServlet/pom.xml" />
         <option value="$PROJECT_DIR$/rocket_blog/pom.xml" />
+        <option value="$PROJECT_DIR$/WorkPress/pom.xml" />
+        <option value="$PROJECT_DIR$/myMusicServlet/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
