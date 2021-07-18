@@ -2,11 +2,13 @@ package dao;
 
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 /**
  * ClassName: MusicDaoTest
- * Description:
+ * Description: 单元测试 MusicDao
  * date: 2021/7/17 22:57
  *
  * @author wt
@@ -18,11 +20,11 @@ public class MusicDaoTest {
     public void insert() {
         Music music = new Music();
         MusicDao musicDao = new MusicDao();
-        music.setTitle("我有一个道姑朋友");
-        music.setSinger("双笙");
-        music.setUrl("/music/");
-        music.setTime("2021-07-17");
-        music.setUserId(1);
+        music.setTitle("盗墓笔记-十年人间");
+        music.setSinger("群星");
+        music.setUrl("2021-07-18");
+        music.setTime("/music/");
+        music.setUserId(2);
         musicDao.insert(music.getTitle(),music.getSinger(),music.getUrl(),music.getTime(),music.getUserId());
     }
 
@@ -30,20 +32,41 @@ public class MusicDaoTest {
     public void findMusic() {
         Music music = new Music();
         MusicDao musicDao = new MusicDao();
-        musicDao.findMusic();
+        List<Music> musicList = musicDao.findMusic();
+        for (Music music1:musicList) {
+            System.out.println(music1);
+        }
     }
 
     @Test
     public void findMusicById() {
         Music music = new Music();
         MusicDao musicDao = new MusicDao();
-        System.out.println(musicDao.findMusicById(1));
+        System.out.println(musicDao.findMusicById(2));
     }
 
     @Test
     public void findMusicByKey() {
         Music music = new Music();
         MusicDao musicDao = new MusicDao();
-        System.out.println(musicDao.findMusicByKey("一个"));
+        System.out.println(musicDao.findMusicByKey(""));
+    }
+
+
+    @Test
+    public void deleteMusicById() {
+        Music music = new Music();
+        MusicDao musicDao = new MusicDao();
+        System.out.println(musicDao.deleteMusicById(2));
+    }
+
+    @Test
+    public void findLoveMusicById() {
+    }
+
+    @Test
+    public void testFindLoveMusicById() {
+        MusicDao musicDao = new MusicDao();
+        System.out.println(musicDao.deleteLoveMusicById(3));
     }
 }

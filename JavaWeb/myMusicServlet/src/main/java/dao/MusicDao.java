@@ -142,4 +142,84 @@ public class MusicDao {
         }
         return musicList;
     }
+    /**
+     * 删除歌曲：
+     */
+    public int deleteMusicById(int musicId) {
+        Connection connection = DBUtil.getConnection();
+        PreparedStatement statement = null;
+        String sql = "delete from music where id = ?";
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1,musicId);
+            int ret = statement.executeUpdate();
+            if (ret == 1) {
+                //删除的同时要先查看中间表(喜欢的音乐)的是否有数据,有数据就必须同时删除中间表数据。
+                if (findLoveMusicById(musicId)) {
+                    int tmp = deleteLoveMusicById(musicId);
+                    if (tmp == 1) {
+                        System.out.println("删除成功！");
+                        return 1;
+                    }
+                    return 0;
+                } else {
+                    //如果没有找到,就说明在喜欢列表没有这首歌,没有被添加到喜欢列表
+                    return 1;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBUtil.getClose(connection,statement,null);
+        }
+        return 0;
+    }
+
+    /**
+     * 看中间表是否有该id的音乐数据
+     */
+    public boolean findLoveMusicById(int musicId) {
+        Connection connection = DBUtil.getConnection();
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        String sql = "select * from lovemusic where music_id = ?";
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1,musicId);
+            resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBUtil.getClose(connection,statement,resultSet);
+        }
+        return false;
+    }
+    /**
+     * 当删除服务器上的音乐时，同时在我喜欢的列表的数据库中进行删除。
+     * @param musicId
+     * @return
+     */
+    public int deleteLoveMusicById(int musicId) {
+        Connection connection = DBUtil.getConnection();
+        PreparedStatement statement = null;
+        String sql = "delete from lovemusic where music_id = ?";
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1,musicId);
+            int ret = statement.executeUpdate();
+            if (ret == 1) {
+                System.out.println("喜欢的音乐删除成功！");
+                return ret;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBUtil.getClose(connection,statement,null);
+        }
+        return 0;
+    }
+
 }
