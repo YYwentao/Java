@@ -20,7 +20,7 @@ import java.util.Map;
  * @author wt
  * @since JDK 1.8
  */
-@WebServlet("/loginServlet")
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

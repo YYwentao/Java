@@ -51,6 +51,30 @@ public class MusicDao {
         return 0;
     }
     /**
+     *  查询上传的歌曲是否已经存在
+     */
+    public boolean isMusicExist(String title,String singer,int userId) {
+        Connection connection = DBUtil.getConnection();
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        String sql = "select * from music where title = ? and singer = ? and userId = ?";
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setString(1,title);
+            statement.setString(2,singer);
+            statement.setInt(3,userId);
+            resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBUtil.getClose(connection,statement,resultSet);
+        }
+        return false;
+    }
+    /**
      * 查询全部歌单
      */
     public List<Music> findMusic(){

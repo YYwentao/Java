@@ -68,4 +68,10 @@ public class MusicDaoTest {
         MusicDao musicDao = new MusicDao();
         System.out.println(musicDao.deleteLoveMusicById(3));
     }
+
+    @Test
+    public void isMusicExist() {
+        MusicDao musicDao = new MusicDao();
+        System.out.println(musicDao.isMusicExist("像我这样的人", "毛不易", 1));
+    }
 }
