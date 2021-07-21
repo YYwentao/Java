@@ -1,8 +1,9 @@
 package servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dao.MusicDao;
+import dao.LoveMusicDao;
 import entity.Music;
+import entity.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,30 +14,32 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * ClassName: FindMusicServlet
- * Description:    模糊匹配查询所有用户当前音乐列表
- * date: 2021/7/20 16:43
+ * ClassName: FindLoveMusicServlet
+ * Description:    模糊匹配查看当前用户喜欢音乐的列表
+ * date: 2021/7/21 18:13
  *
  * @author wt
  * @since JDK 1.8
  */
-@WebServlet("/findMusic")
-public class FindMusicServlet extends HttpServlet {
+@WebServlet("/findLoveMusic")
+public class FindLoveMusicServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         resp.setContentType("application/json;charset=utf-8");
-
-        String str = req.getParameter("musicName");
+        //获取当前用户和查询关键字
+        User user = (User) req.getSession().getAttribute("user");
+        String str = req.getParameter("loveMusicName");
+        //调用 dao 层执行 sql
+        LoveMusicDao loveMusicDao = new LoveMusicDao();
         List<Music> musicList = null;
-        MusicDao musicDao = new MusicDao();
-
-        if (str == null || "".equals(str)) {
-            musicList = musicDao.findMusic();
+        if (str != null) {
+            musicList = loveMusicDao.findLoveMusicByKeyAndUID(str,user.getId());
         } else {
-            musicList = musicDao.findMusicByKey(str);
+            musicList = loveMusicDao.findLoveMusic(user.getId());
         }
-        for (Music music:musicList) {
+
+        for (Music music: musicList) {
             System.out.println(music);
         }
         ObjectMapper oj = new ObjectMapper();

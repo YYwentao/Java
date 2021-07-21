@@ -17,13 +17,13 @@ import java.util.Map;
 
 /**
  * ClassName: DeleteMusicServlet
- * Description:
+ * Description: 删除音乐 + 移除文件
  * date: 2021/7/20 18:45
  *
  * @author wt
  * @since JDK 1.8
  */
-@WebServlet("/delete")
+@WebServlet("/deleteMusic")
 public class DeleteMusicServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

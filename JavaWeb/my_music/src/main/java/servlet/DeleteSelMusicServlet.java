@@ -11,18 +11,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * ClassName: DeleteSelMusicServlet
- * Description:
+ * Description:    批量删除音乐
  * date: 2021/7/20 22:27
  *  优化: 批量删除可使用回滚(暂未使用)
  * @author wt
  * @since JDK 1.8
  */
-@WebServlet("/deleteSelect")
+@WebServlet("/deleteSelectMusic")
 public class DeleteSelMusicServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,7 +31,7 @@ public class DeleteSelMusicServlet extends HttpServlet {
         resp.setContentType("application/json;charset=utf-8");
 
         String[] values =  req.getParameterValues("id[]");
-        System.out.println("要删除 music 的id 有 :"+values.toString());
+        System.out.println("要删除 music 的id 有 :"+ Arrays.toString(values));
 
         Map<String,Object>  return_map = new HashMap<>();
 
