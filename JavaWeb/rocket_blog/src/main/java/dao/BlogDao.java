@@ -71,7 +71,11 @@ public class BlogDao {
                 Blog blog = new Blog();
                 blog.setBlogId(resultSet.getInt("blogId"));
                 blog.setTitle(resultSet.getString("title"));
-                blog.setContent(resultSet.getString("content"));
+                String content = resultSet.getString("content");
+                if (content.length() > 110) {
+                    content = content.substring(0,110) + "...";
+                }
+                blog.setContent(content);
                 blog.setUserId(resultSet.getInt("userId"));
                 blog.setPostTime(resultSet.getTimestamp("postTime"));
                 blogs.add(blog);
