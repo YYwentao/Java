@@ -1,4 +1,4 @@
-package servlet;
+package api;
 
 import dao.Blog;
 import dao.BlogDao;
@@ -22,25 +22,6 @@ import java.util.List;
  */
 @WebServlet("/blog_list")
 public class BlogListServlet extends HttpServlet {
-    private TemplateEngine engine = null;
-
-    @Override
-    public void init() throws ServletException {
-        /**
-         *  初始化 Thymeleaf
-         *  1)创建一个 engine(引擎). ---负责把 Java中的数据替换到模板中
-         *  2)创建一个 resolver 对象.  ---负责找到 html 模板在哪并加载到内存中，供 engine 使用
-         *  3)设置 resolver 的一些属性 ---让它能够找到 html 文件
-         *  4)把 resolver 和 engine 关联起来
-         */
-        engine = new TemplateEngine();
-        ServletContextTemplateResolver resolver = new ServletContextTemplateResolver(getServletContext());
-        resolver.setCharacterEncoding("utf-8");
-        resolver.setPrefix("/WEB-INF/template/");   //设置前置
-        resolver.setSuffix(".html");                //设置后缀
-        engine.setTemplateResolver(resolver);
-    }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -57,6 +38,7 @@ public class BlogListServlet extends HttpServlet {
         // 模板里的每个 ${ } 里面的内容都需要在 webContext 设定进去.
         webContext.setVariable("blogs", blogList);
         // 3) 进行渲染.
+        TemplateEngine engine = (TemplateEngine) getServletContext().getAttribute("engine");
         String html = engine.process("blog_list",webContext);
         resp.getWriter().write(html);
     }

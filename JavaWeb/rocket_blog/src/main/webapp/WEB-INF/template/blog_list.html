@@ -18,7 +18,7 @@
         }
 
         .container {
-            width: 800px;
+            width: 1000px;
             margin: 0 auto;
             background: #fff;
         }
@@ -50,7 +50,7 @@
     <div class="container">
         <!--        blog对应每一篇博客-->
         <div class="blog" th:each="blog : ${blogs}">
-            <a href="#" class="title" th:text=${blog.title}>我是标题</a>
+            <a th:href="${'blogContent?blogId=' + blog.blogId}" class="title" th:text=${blog.title}>我是标题</a>
             <div class="desc" th:text=${blog.content}>我是正文的摘要</div>
             <div class="post-time" th:text=${blog.postTime}>发布时间: 2021-07-11 17：30：00</div>
         </div>

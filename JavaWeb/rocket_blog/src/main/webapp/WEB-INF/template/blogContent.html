@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客内容页</title>
+    <style>
+        /* 清除浏览器默认样式 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f3f3f3;
+        }
+
+        .container {
+            width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+
+        .title {
+            text-align: center;
+            padding: 10px 0;
+            font-size: 36px;
+        }
+
+        .author {
+            text-align: center;
+            padding: 10px 0;
+            color: #999aaa;
+        }
+
+        .post-time {
+            text-align: center;
+            color: #999aaa;
+        }
+
+        .content {
+            padding: 10px 0;
+            text-indent: 20px;
+        }
+
+        .nav {
+            height: 50px;
+            background: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-title {
+            padding-left: 10px;
+        }
+
+        .nav-button {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+
+        .spacer {
+            width: 55%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <!-- 如果是用户未登录, 就显示未登录, 并且显示登陆/注册按钮 -->
+        <!-- 如果是用户已登录, 就显示欢迎 XXX -->
+        <h3 class="nav-title">我的博客系统</h3>
+        <div class="spacer"></div>
+        <a class="nav-button">删除</a>
+    </div>
+    <!-- 作为整个博客的容器 -->
+    <div class="container">
+        <h3 class="title" th:text=${blog.title}>这是博客标题</h3>
+        <div class="author" th:text=${username}>文涛</div>
+        <div class="post-time" th:text=${blog.postTime}>2021-07-21 12:00:00</div>
+        <div class="content" th:text=${blog.content}>
+            这是博客正文
+            这是博客正文
+            这是博客正文
+            这是博客正文
+            这是博客正文
+        </div>
+    </div>
+</body>
+
+</html>
