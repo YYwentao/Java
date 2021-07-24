@@ -40,19 +40,54 @@
             color: #999aaa;
             text-align: right;
             padding-right: 20px;
-
         }
+
+        .nav {
+            height: 50px;
+            background: #30A6E6;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+        }
+        .nav-title {
+            padding-left: 20px;
+        }
+
+        .space {
+            width: 70%;
+        }
+        .nav-button {
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+        .nav-button:hover {
+            color: black;
+            font-size: large;
+        }
+
     </style>
 </head>
 
 <body>
+    <div class="nav">
+        <h3 class="nav-title">我的博客系统</h3>
+       <!-- 中间空白间隔-->
+        <div class="space" ></div>
+        <!-- 如果用户未登陆,就显示未登录,并且显示登录注册/按钮-->
+        <!-- 如果用户已经登陆，就显示欢迎XXX-->
+        <a href="login.html" class="nav-button" th:if="${!isLogin}">登录</a>
+        <a href="register.html" class="nav-button" th:if="${!isLogin}">注册</a>
+        <div class="nav-button" th:if="${isLogin}" th:text="${'欢迎您 '+user.username}"></div>
+        <a href="logout" class="nav-button" th:if="${isLogin}">注销</a>
+    </div>
     <!--container 存放所有博客-->
     <div class="container">
         <!--        blog对应每一篇博客-->
         <div class="blog" th:each="blog : ${blogs}">
             <a th:href="${'blogContent?blogId=' + blog.blogId}" class="title" th:text=${blog.title}>我是标题</a>
-            <div class="desc" th:text=${blog.content}>我是正文的摘要</div>
-            <div class="post-time" th:text=${blog.postTime}>发布时间: 2021-07-11 17：30：00</div>
+            <div class="desc" th:text="${blog.content}">我是正文的摘要</div>
+            <div class="post-time" th:text="${blog.postTime}">发布时间: 2021-07-11 17：30：00</div>
         </div>
     </div>
 </body>
