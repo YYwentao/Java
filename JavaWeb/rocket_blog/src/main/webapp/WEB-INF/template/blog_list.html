@@ -54,7 +54,7 @@
         }
 
         .space {
-            width: 70%;
+            width: 65%;
         }
         .nav-button {
             color: #FFFFFF;
@@ -75,17 +75,20 @@
        <!-- 中间空白间隔-->
         <div class="space" ></div>
         <!-- 如果用户未登陆,就显示未登录,并且显示登录注册/按钮-->
-        <!-- 如果用户已经登陆，就显示欢迎XXX-->
+
         <a href="login.html" class="nav-button" th:if="${!isLogin}">登录</a>
         <a href="register.html" class="nav-button" th:if="${!isLogin}">注册</a>
+
+        <!-- 如果用户已经登陆，就显示欢迎XXX-->
         <div class="nav-button" th:if="${isLogin}" th:text="${'欢迎您 '+user.username}"></div>
+        <a href="blog_insert.html"  class="nav-button" th:if="${isLogin}">写博客</a>
         <a href="logout" class="nav-button" th:if="${isLogin}">注销</a>
     </div>
     <!--container 存放所有博客-->
     <div class="container">
         <!--        blog对应每一篇博客-->
         <div class="blog" th:each="blog : ${blogs}">
-            <a th:href="${'blogContent?blogId=' + blog.blogId}" class="title" th:text=${blog.title}>我是标题</a>
+            <a th:href="${'blogContent?blogId=' + blog.blogId}" class="title" th:text="${blog.title}">我是标题</a>
             <div class="desc" th:text="${blog.content}">我是正文的摘要</div>
             <div class="post-time" th:text="${blog.postTime}">发布时间: 2021-07-11 17：30：00</div>
         </div>

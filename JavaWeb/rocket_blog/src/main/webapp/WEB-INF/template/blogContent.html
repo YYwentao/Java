@@ -75,14 +75,14 @@
         <!-- 如果是用户已登录, 就显示欢迎 XXX -->
         <h3 class="nav-title">我的博客系统</h3>
         <div class="space"></div>
-        <a class="nav-button">删除</a>
+        <a class="nav-button" th:href="${'blogDelete?blogId='+blog.blogId}">删除</a>
     </div>
     <!-- 作为整个博客的容器 -->
     <div class="container">
-        <h3 class="title" th:text=${blog.title}>这是博客标题</h3>
-        <div class="author" th:text=${username}>文涛</div>
-        <div class="post-time" th:text=${blog.postTime}>2021-07-21 12:00:00</div>
-        <div class="content" th:text=${blog.content}>
+        <h3 class="title" th:text="${blog.title}">这是博客标题</h3>
+        <div class="author" th:text="${username}">文涛</div>
+        <div class="post-time" th:text="${blog.postTime}">2021-07-21 12:00:00</div>
+        <div class="content" th:text="${blog.content}">
             这是博客正文
             这是博客正文
             这是博客正文

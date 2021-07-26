@@ -26,7 +26,7 @@ public class BlogDao {
             statement = connection.prepareStatement(sql);
             statement.setString(1,blog.getTitle());
             statement.setString(2,blog.getContent());
-            statement.setInt(3,blog.getBlogId());
+            statement.setInt(3,blog.getUserId());
             //执行
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -60,7 +60,7 @@ public class BlogDao {
     public List<Blog> selectAll () {
         List<Blog> blogs = new ArrayList<>();
         Connection connection = DBUtil.getConnection();
-        String sql = "select * from blog";
+        String sql = "select * from blog order by blogId desc ";
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
