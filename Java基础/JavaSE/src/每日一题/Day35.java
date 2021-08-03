@@ -14,5 +14,8 @@ public class Day35 {
     //1、题目ID：772 年会抽奖
 
     //2、题目ID：840 抄送列表
-    
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String str1 = scan.nextLine();
+    }
 }
