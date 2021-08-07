@@ -77,4 +77,39 @@ public class UserDao {
             DBUtil.getClose(connection,statement,null);
         }
     }
+    /**
+     * 根据用户名查询是否存在当前用户，存在就返回一个 User
+     */
+    public User selectByName(String username) {
+        Connection connection = DBUtil.getConnection();
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        User user = null;
+        String sql = "select * from user where username = ?";
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setString(1,username);
+            resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                user = new User();
+                user.setId(resultSet.getInt("id"));
+                user.setUsername(resultSet.getString("username"));
+                user.setPassword(resultSet.getString("password"));
+                user.setAge(resultSet.getInt("age"));
+                user.setGender(resultSet.getString("gender"));
+                user.setEmail(resultSet.getString("email"));
+                return user;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBUtil.getClose(connection,statement,resultSet);
+        }
+        return null;
+    }
+
+    public static void main(String[] args) {
+
+    }
 }
+

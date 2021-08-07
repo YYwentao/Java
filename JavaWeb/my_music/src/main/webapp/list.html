@@ -30,9 +30,9 @@
 
     <style>
         #body{
-            /*background-image: url("images/3.png");
+            background-image: url("images/web_login_bg.jpg");
             background-size:100% 100%;
-            background-attachment: fixed;*/
+            background-attachment: fixed;
         }
     </style>
 
@@ -42,7 +42,7 @@
         });
         function load(musicName){
             $.ajax({
-                url: "findMusic",
+                url: "findMusicServlet",
                 type:"get",
                 data:{musicName:musicName},
                 dataType: "json",
@@ -85,7 +85,7 @@
         function loveInfo(obj) {
             console.log(obj);
             $.ajax({
-                url:"loveMusic",
+                url:"loveMusicServlet",
                 type: "post",
                 //发送给后端的数据
                 data: {"id": obj},
@@ -94,7 +94,9 @@
                     if(data.msg===true){
                         alert("加入喜欢的列表成功");
                         window.location.href="list.html";
-                    }else{
+                    } else if (data.msg === 0) {
+                        alert("请登录后再添加喜欢");
+                    } else{
                         alert("加入喜欢的列表失败或者已经存在该音乐");
                     }
                 }
@@ -104,7 +106,7 @@
         function deleteInfo(obj) {
             console.log(obj);
             $.ajax({
-                url:"deleteMusic",
+                url:"deleteMusicServlet",
                 type: "post",
                 //发送给后端的数据
                 data: {"id": obj},
@@ -113,7 +115,9 @@
                     if(data.msg===true){
                         alert("删除成功");
                         window.location.href="list.html";
-                    }else{
+                    } else if (data.msg === 0) {
+                        alert("请登录后再删除");
+                    } else {
                         alert("删除失败");
                     }
                 }
@@ -141,7 +145,7 @@
                     });
                     //发送ajax请求
                     $.ajax({
-                        url:"deleteSelectMusic",
+                        url:"deleteSelectMusicServlet",
                         //将id数组，发送给deleteSelectedServlet
                         data:{"id":id},
                         type: "POST",
@@ -150,6 +154,8 @@
                             if(data.msg===true){
                                 alert("删除成功");
                                 window.location.href="list.html";
+                            } else if (data.msg === 0) {
+                                alert("请登录后再删除");
                             }else{
                                 alert("删除失败");
                             }
