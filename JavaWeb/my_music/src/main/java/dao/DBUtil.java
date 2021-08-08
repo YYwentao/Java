@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * date: 2021/7/17 17:07
  */
 public class DBUtil {
-    private static final String url = "jdbc:mysql://127.0.0.1:3306/myMusicserver?characterEncoding=utf8&useSSL=false";
+    private static final String url = "jdbc:mysql://127.0.0.1:3306/my_music?characterEncoding=utf8&useSSL=false";
     private static final String username ="root";
     private static final String password = "";
 

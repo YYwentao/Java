@@ -3,6 +3,9 @@ package api;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dao.MusicDao;
 import entity.Music;
+import entity.User;
+import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.context.WebContext;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,7 +28,7 @@ public class FindMusicServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
-        resp.setContentType("application/json;charset=utf-8");
+        resp.setContentType("application/json;  charset=utf-8");
 
         String str = req.getParameter("musicName");
         List<Music> musicList = null;

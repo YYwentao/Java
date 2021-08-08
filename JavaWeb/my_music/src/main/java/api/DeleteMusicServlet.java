@@ -52,8 +52,11 @@ public class DeleteMusicServlet extends HttpServlet {
         int ret = musicDao.deleteMusicById(id);
         System.out.println("ret:" + ret);
         if (ret== 1) {
-            //上面执行删除数据库操作(中间表已在dao层实现),并删除对应文件目录位置
-            File file = new File("E:\\编程学习\\代码\\IdeaProjects\\JavaWeb\\my_music\\src\\main\\webapp\\" +
+            //上面执行删除数据库操作(中间表已在dao层实现),并删除对应文件目录位置(windows)
+//            File file = new File("E:\\编程学习\\代码\\IdeaProjects\\JavaWeb\\my_music\\src\\main\\webapp\\" +
+//                    music.getUrl()+".mp3");
+            //(Linux 路径)
+            File file = new File(" /root/java/apache-tomcat-8.5.68/webapps/mymusic/" +
                     music.getUrl()+".mp3");
             if (file.delete()) {
                 //删除成功

@@ -58,8 +58,11 @@ public class DeleteSelMusicServlet extends HttpServlet {
             //再删除数据库数据
             int ret = musicDao.deleteMusicById(musicId);
             if (ret == 1) {
-                //删除服务器上的数据
-                File file = new File("E:\\编程学习\\代码\\IdeaProjects\\JavaWeb\\my_music\\src\\main\\webapp\\" +
+                //删除服务器上的数据 window 路径
+//                File file = new File("E:\\编程学习\\代码\\IdeaProjects\\JavaWeb\\my_music\\src\\main\\webapp\\" +
+//                        music.getUrl()+".mp3");
+                // Linux 路径
+                File file = new File(" /root/java/apache-tomcat-8.5.68/webapps/mymusic/" +
                         music.getUrl()+".mp3");
                 if (file.delete()) {
                     System.out.println("musicId 为"+musicId+"的数据库和文件内容都删除成功了！");

@@ -26,7 +26,9 @@ import java.text.SimpleDateFormat;
 @MultipartConfig
 public class uploadServlet extends HttpServlet {
     //文件存放路径
-    private static final String SavePath = "E:\\编程学习\\代码\\IdeaProjects\\JavaWeb\\my_music\\src\\main\\webapp\\music\\";
+//    private static final String SavePath = "E:\\编程学习\\代码\\IdeaProjects\\JavaWeb\\my_music\\src\\main\\webapp\\music\\";
+    // Linux 文件存放路径
+    private static final String SavePath ="/root/java/apache-tomcat-8.5.68/webapps/mymusic/music/";
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -35,9 +37,10 @@ public class uploadServlet extends HttpServlet {
 
         User user = (User) req.getSession().getAttribute("user");
         if (user == null) {
-            req.setAttribute("msg","请登录后再上传");
+//            req.setAttribute("msg","请登录后再上传");
             System.out.println("请登录后再上传");
             resp.getWriter().write("<h3>请登录后再上传 <a href=\"login.html\">点击登录</a></h3>");
+            return;
         } else {
             // 1.上传文件,把文件存到指定路径，并从请求中截取文件名和歌手信息(难点)
             //先上传服务器 用postman进行了urlencode,获取到请求中的歌名的核心代码
@@ -76,6 +79,7 @@ public class uploadServlet extends HttpServlet {
                 System.out.println("当前歌曲已经上传过了,请不要重复上传！");
                 part.delete();
                 resp.getWriter().write("<h3>请不要重复上传！<a href=\"list.html\">点击返回</a></h3>");
+                return;
             }
             int ret = musicDao.insert(title,singer,time,url,userId);
             if (ret != 0) {

@@ -1,8 +1,8 @@
 -- 数据库
-drop database if exists `myMusicServer`;
-create database if not exists `myMusicServer` character set utf8;
+drop database if exists `my_music`;
+create database if not exists `my_music` character set utf8;
 -- 使用数据库
-use `myMusicServer`;
+use `my_music`;
 DROP TABLE IF EXISTS `music`;
 CREATE TABLE `music` (
     `id` int PRIMARY KEY AUTO_INCREMENT,
