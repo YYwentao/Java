@@ -67,7 +67,7 @@ public class Test20210408 {
     }
 
     //优化后冒泡排序
-    public static void bubbleSort(int[] array) {
+    public static void bubbleSort1(int[] array) {
 
         for (int i = 0; i <array.length-1; i++) {
             boolean flg = false;//默认每一趟都是没有有序的
@@ -88,7 +88,7 @@ public class Test20210408 {
         //冒泡
         int[] array = {6,5,10,3,9};
         System.out.println(Arrays.toString(array));
-        bubbleSort(array);
+        bubbleSort1(array);
         System.out.println(Arrays.toString(array));
     }
 
